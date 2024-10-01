@@ -1,5 +1,5 @@
-import React from "react";
-// Import your components here
+"use client";
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import HeroContent from "@/components/pages/HeroContent";
 import Slider from "@/components/pages/slider";
@@ -10,24 +10,38 @@ import Skills from "@/components/pages/Skills";
 import AboutSection from "@/components/pages/AboutSection";
 import ContactSection from "@/components/pages/ContactSection";
 import Footer from "@/components/pages/FooterSection";
+import PreLoader from "@/components/main/Preloader";
 
 function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false); // Hide preloader after some time
+    }, 3000); // Adjust the time (in ms) based on your animation duration
+    return () => clearTimeout(timer); // Clean up the timer on component unmount
+  }, []);
+
   return (
     <main className="h-full w-full">
-      <div className="flex flex-col gap-20">
-        <Navbar />
-        <HeroContent />
-        <SkillsSection />
-        <Skills />
-        <Slider />
-        <LampContainer>
-          <div></div>
-        </LampContainer>
-        <Projects />
-        <AboutSection />
-        <ContactSection />
-        <Footer />  
-      </div>
+      {isLoading ? (
+        <PreLoader />
+      ) : (
+        <div className="flex flex-col gap-20">
+          <Navbar />
+          <HeroContent />
+          <SkillsSection />
+          <Skills />
+          <Slider />
+          <LampContainer>
+            <div></div>
+          </LampContainer>
+          <Projects />
+          <AboutSection />
+          <ContactSection />
+          <Footer />
+        </div>
+      )}
     </main>
   );
 }

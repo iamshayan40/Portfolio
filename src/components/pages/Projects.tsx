@@ -11,7 +11,7 @@ function Skills() {
       description:
         "This project is an animated Workstudio clone featuring animation libraries like GSAP and Locomotive Scroll. The website delivers an immersive experience on PC, showcasing stunning animations that enhance user interaction. Both the UI and UX are designed to be exceptional, making navigation enjoyable and visually engaging. This clone brings a dynamic and captivating feel to the browsing experience!",
       image:
-        "https://works.studio/assets/imager/images/virgin-music-brand-identity/34083/Thumb_c85caf2b214c8bd6e09dc9b9f86188d7.jpg",
+        "https://works.studio/assets/imager/images/the-north-face-climb-festival/41520/Thumbnail_e49f8295ccc5a85e1a76e2d68c06456f.jpg",
       width: 400,  // Specify the width
       height: 300, // Specify the height
       link: "https://github.com/iamshayan40/Works-Studio",

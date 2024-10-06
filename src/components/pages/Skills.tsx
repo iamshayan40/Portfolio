@@ -88,29 +88,30 @@ export default function Skills() {
           user-friendly applications.
         </p>
 
-        {/* Container for sliding boxes */}
-        <div className="flex overflow-hidden w-full mt-16">
-          <div className="flex animate-slide-left gap-6">
-            {/* Inner Boxes with Animation */}
-            {extendedSkills.map((skill, index) => (
-              <div
-                key={index}
-                className={`relative w-48 h-24 border border-zinc-800 hover:border-zinc-700 backdrop-blur-lg bg-transparent rounded-3xl transition ease-in-out opacity-80 hover:opacity-100 flex items-center justify-center z-10`} // Added z-index here
-              >
-                <div className="flex flex-col items-center space-y-2">
-                  {" "}
-                  {/* Centered content */}
-                  {skill.icon}
-                  <span className="text-white text-lg font-lexend font-extralight">
-                    {skill.title}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* Container for sliding boxes */}
+<div className="flex overflow-hidden w-full mt-24">
+  {/* Add whitespace-nowrap here */}
+  <div className="flex animate-slide-left gap-6 whitespace-nowrap">
+    {/* Inner Boxes with Animation */}
+    {extendedSkills.map((skill, index) => (
+      <div
+        key={index}
+        className={`relative w-48 h-24 border border-zinc-800 hover:border-zinc-700 backdrop-blur-lg bg-transparent rounded-3xl transition ease-in-out opacity-80 hover:opacity-100 flex items-center justify-center z-10`}
+      >
+        <div className="flex flex-col items-center space-y-2">
+          {/* Centered content */}
+          {skill.icon}
+          <span className="text-white text-lg font-lexend font-extralight">
+            {skill.title}
+          </span>
         </div>
+      </div>
+    ))}
+  </div>
+</div>
+
         {/* Gap between inner boxes */}
-        <div className="flex overflow-hidden w-full md:mt-8 mt-4 mb-4">
+        <div className="flex overflow-hidden w-full md:mt-6 mt-4 mb-4">
           {" "}
           {/* Added margin-top for spacing */}
           <div className="flex animate-slide-right gap-6">

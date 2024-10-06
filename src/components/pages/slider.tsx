@@ -34,7 +34,7 @@ const Slider = () => {
           }
         }
         .animate-scroll {
-          animation: scroll 8s linear infinite;
+          animation: scroll 9s linear infinite;
           white-space: nowrap; /* Ensure words stay in one line */
         }
       `}</style>

@@ -141,6 +141,7 @@ const ContactSection = () => {
           </div>
         </div>
 
+        
         <div className="w-full flex justify-center md:justify-end md:hidden mt-2">
           <div className="w-full max-w-md max-h-fit">
             <h2 className="flex justify-center text-gray-300 text-[2.5rem] sm:text-3xl font-bold font-poppins pt-10">

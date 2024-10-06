@@ -13,7 +13,7 @@
 
   @layer base {
     .dark {
-      --background: 250 80% 1%; /* Almost Black Purple */
+      --background: 250 100% 1%; /* Almost Black Purple */
       --foreground: 0 0% 100%; /* White */
       --card: 250 80% 1%; /* Almost Black Purple */
       --card-foreground: 0 0% 100%; /* White */

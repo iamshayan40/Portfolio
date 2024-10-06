@@ -8,7 +8,7 @@ import Image from "next/image";
 const HeroContent = () => {
   const handleCVDownload = () => {
     const link = document.createElement("a");
-    link.href = "/public/Muhammad Shayan.pdf"; 
+    link.href = "/public/Muhammad Shayan.pdf";
     link.setAttribute("download", "Muhammad_Shayan_CV.pdf");
     document.body.appendChild(link);
     link.click();
@@ -75,7 +75,7 @@ const HeroContent = () => {
             <strong className="font-bold">high-quality</strong> and{" "}
             <strong className="font-bold">fully responsive</strong> websites
             with modern designs that elevate user experience. Let's work
-            together to bring your ideas to life!
+            together to bring your innovative ideas to life!
           </p>
 
           <div className="md:flex items-center justify-start md:mt-6 space-x-4 flex-wrap mt-20">
@@ -127,7 +127,7 @@ const HeroContent = () => {
               <div className="relative group mb-4">
                 <button
                   onClick={handleCVDownload} // Attach the function here
-                  className="relative inline-block md:p-1 p-1 font-semibold leading-1 text-gray-300 shadow-sm cursor-pointer rounded-full border border-gray-700 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
+                  className="relative inline-block md:p-1 p-1 md:ml-0 -ml-3 font-semibold leading-1 text-gray-300 shadow-sm cursor-pointer rounded-full border border-gray-700 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
                 >
                   <span className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
                   <span className="relative z-10 block px-4 py-1 rounded-full">

@@ -28,7 +28,7 @@ const exploreVariants = {
 
 const Navbar = () => {
   const [progress, setProgress] = useState(0);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Control the menu open/close state
   const pathname = usePathname();
 
   useEffect(() => {
@@ -101,7 +101,7 @@ const Navbar = () => {
 
       {/* Mobile Navbar Menu */}
       <div className="lg:hidden flex items-center">
-        <Sheet>
+        <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}> {/* Bind isMenuOpen to control sheet visibility */}
           <SheetTrigger asChild>
             <motion.div
               initial={{ x: 50, opacity: 0 }} // Animate in from the right
@@ -160,7 +160,10 @@ const Navbar = () => {
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                       className="relative group"
                     >
-                      <Link href={path}>
+                      <Link
+                        href={path}
+                        onClick={() => setIsMenuOpen(false)} // Close the sheet menu when a link is clicked
+                      >
                         {labels[index]}
                         <span className="absolute left-0 bottom-0 w-full h-0.5 bg-gray-200 transition-all duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
                       </Link>

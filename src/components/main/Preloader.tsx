@@ -13,8 +13,8 @@ export const PreLoader = () => {
       setVisible(false); // Start fade-out
       setTimeout(() => {
         setHidden(true); // Finally hide the loader after fade-out
-      }, 2000); // Match with the CSS transition duration
-    }, 3000); // Show loader for 3 seconds before fade-out starts
+      }, 3000); // Match with the CSS transition duration
+    }, 4000); // Show loader for 3 seconds before fade-out starts
   }, []);
 
   if (hidden) return null; // Remove loader completely from DOM

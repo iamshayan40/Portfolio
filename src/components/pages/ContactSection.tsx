@@ -3,7 +3,7 @@ import Slider from "./slider";
 import React, { FormEvent, useState } from "react";
 
 const ContactSection = () => {
-  const [buttonText, setButtonText] = useState("Submit");
+  const [buttonText, setButtonText] = useState("Submit Form");
   const [isSubmitted, setIsSubmitted] = useState(false); // New state to track submission
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -16,23 +16,32 @@ const ContactSection = () => {
 
     console.log("Submitting form with data:", json);
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    }).then((res) => res.json());
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      });
 
-    console.log("Response received:", res);
+      const data = await res.json();
+      console.log("Response received:", data);
 
-    if (res.success) {
-      console.log("Success", res);
-      setButtonText("Submitted✅"); // Change button text to 'Submitted'
-      setIsSubmitted(true); // Set submitted state to true
-    } else {
-      console.error("Error", res.message);
+      if (data.success) {
+        console.log("Success", data);
+        setButtonText("Form Submitted");
+        setIsSubmitted(true);
+        // Optionally reset the form fields here
+      } else {
+        console.error("Error", data.message);
+        // You might want to set an error message state here to show to the user
+      }
+    } catch (error) {
+      console.error("Submission failed:", error);
+      // Handle fetch error
+      // You might want to set an error message state here to show to the user
     }
   };
 
@@ -42,9 +51,9 @@ const ContactSection = () => {
         <Slider />
       </div>
 
-      <div className="container mx-auto flex flex-col md:flex-row md:items-start justify-between py-14 px-4">
+      <div className="container mx-auto flex flex-col md:flex-row md:items-start justify-between py-14">
         {/* Left Section */}
-        <div className="md:w-1/2 grid grid-cols-1 items-start p-6 sm:p-10 md:p-0 font-lexend">
+        <div className="md:w-1/2 grid grid-cols-1 items-start p-6 font-lexend">
           <div>
             <h1 className="text-gray-100 text-4xl sm:text-5xl font-poppins font-bold">
               Let's{" "}
@@ -81,7 +90,7 @@ const ContactSection = () => {
                     </div>
                     <a
                       href="mailto:shayanwaseem.50@gmail.com"
-                      className="text-[#868686] text-sm ml-4 transition-colors duration-300 hover:text-blue-500"
+                      className="text-[#868686] text-sm ml-4 transition-transform duration-300 hover:text-blue-500 ease-in-out hover:scale-105 active:scale-95"
                     >
                       <label className="block font-lexend font-light">
                         Email
@@ -116,7 +125,7 @@ const ContactSection = () => {
                     </div>
                     <a
                       href="https://wa.me/923102017585"
-                      className="text-[#868686] text-sm ml-4 transition-colors duration-300 hover:text-blue-500"
+                      className="text-[#868686] text-sm ml-4 transition-transform duration-300 hover:text-blue-500 ease-in-out hover:scale-105 active:scale-95"
                     >
                       <label className="block font-lexend font-light">
                         Contact No.
@@ -132,16 +141,16 @@ const ContactSection = () => {
           </div>
         </div>
 
-        <div className="w-full flex justify-center md:justify-end ">
-          <div className="bg-transparent border-2 border-zinc-800 p-4 rounded-2xl shadow-lg w-full max-w-md max-h-fit">
-            <h2 className="flex justify-center text-gray-300 text-2xl sm:text-3xl font-light font-poppins">
+        <div className="w-full flex justify-center md:justify-end md:hidden mt-2">
+          <div className="w-full max-w-md max-h-fit">
+            <h2 className="flex justify-center text-gray-300 text-[2.5rem] sm:text-3xl font-bold font-poppins pt-10">
               Get in{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 ml-2">
                 touch!
               </span>
             </h2>
 
-            <form onSubmit={onSubmit} className="mt-4">
+            <form onSubmit={onSubmit} className="mt-2 px-4">
               <div className="mb-4">
                 <label
                   className="block text-gray-100 text-sm font-light font-lexend mb-2"
@@ -150,7 +159,7 @@ const ContactSection = () => {
                   Name
                 </label>
                 <input
-                  className="shadow appearance-none border-2 border-zinc-800 rounded w-full py-2 px-3 bg-transparent text-gray-100 font-light font-lexend leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border-2 border-zinc-800 rounded-xl w-full py-4 px-3 bg-transparent text-gray-100 font-light font-lexend leading-tight focus:outline-none focus:shadow-outline"
                   id="name"
                   name="name" // Added name attribute
                   type="text"
@@ -166,7 +175,7 @@ const ContactSection = () => {
                   Email
                 </label>
                 <input
-                  className="shadow appearance-none border-2 border-zinc-800 rounded w-full py-2 px-3 bg-transparent text-gray-100 font-light font-lexend leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border-2 border-zinc-800 rounded-xl w-full py-4 px-3 bg-transparent text-gray-100 font-light font-lexend leading-tight focus:outline-none focus:shadow-outline"
                   id="email"
                   name="email" // Added name attribute
                   type="email"
@@ -182,19 +191,121 @@ const ContactSection = () => {
                   Message
                 </label>
                 <textarea
-                  className="shadow appearance-none border-2 border-zinc-800 rounded w-full py-2 px-3 bg-transparent text-gray-100 font-light font-lexend leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border-2 border-zinc-800 rounded-xl w-full py-8 px-3 bg-transparent text-gray-100 font-light font-lexend leading-tight focus:outline-none focus:shadow-outline"
                   id="message"
                   name="message" // Added name attribute
                   placeholder="Your Message"
                   required
                 ></textarea>
               </div>
-              <div className="flex items-center justify-center">
-                <button
-                  className="bg-transparent border border-zinc-800 rounded-full text-white py-2 px-5 font-extralight font-lexend hover:bg-gray-700 transition duration-300"
-                  type="submit"
-                >
-                  {buttonText}
+              <div className="relative group justify-center md:justify-start flex">
+                <button className="relative inline-block p-px -space-y-3 mt-3 font-semibold font-lexend leading-6 text-white bg-gray-900 cursor-pointer rounded-xl transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
+                  <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
+
+                  <span className="relative z-10 block px-5 py-3 rounded-xl bg-gray-900">
+                    <div className="relative z-10 flex items-center space-x-2">
+                      <span className="transition-all duration-500 group-hover:translate-x-1">
+                        {buttonText}
+                      </span>
+                      <svg
+                        className="w-6 h-6 transition-transform duration-500 group-hover:translate-x-1"
+                        data-slot="icon"
+                        aria-hidden="true"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                          fillRule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                  </span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        {/* LG CONTACT FORM */}
+        <div className="w-full md:flex md:justify-end hidden mt-12">
+          <div className="w-full max-w-md max-h-fit space-y-6">
+            <h2 className="flex justify-center md:justify-start text-gray-300 text-2xl sm:text-[2.5rem] font-bold font-poppins">
+              Get in{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 ml-2">
+                touch!
+              </span>
+            </h2>
+
+            <form onSubmit={onSubmit} className="mt-4 space-y-5">
+              <div className="mb-4">
+                <label
+                  className="block text-gray-100 text-sm font-light font-lexend mb-2"
+                  htmlFor="name"
+                ></label>
+                <input
+                  className="shadow appearance-none border-2 border-zinc-800 rounded-xl w-10/12 py-3 px-3 bg-transparent text-gray-100 font-light font-lexend leading-tight focus:outline-none focus:shadow-outline"
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  className="block text-gray-100 text-sm font-light font-lexend mb-2"
+                  htmlFor="email"
+                ></label>
+                <input
+                  className="shadow appearance-none border-2 border-zinc-800 rounded-xl w-10/12 py-3 px-3 bg-transparent text-gray-100 font-light font-lexend leading-tight focus:outline-none focus:shadow-outline"
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  className="block text-gray-100 text-sm font-light font-lexend mb-2"
+                  htmlFor="message"
+                ></label>
+                <textarea
+                  className="shadow appearance-none border-2 border-zinc-800 rounded-xl w-10/12 py-4 px-3 bg-transparent text-gray-100 font-light font-lexend leading-tight focus:outline-none focus:shadow-outline"
+                  id="message"
+                  name="message"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+              </div>
+              <div className="relative group justify-center md:justify-start flex">
+                <button className="relative inline-block p-px -space-y-3 font-semibold font-lexend leading-6 text-white bg-gray-900 cursor-pointer rounded-xl transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
+                  <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
+
+                  <span className="relative z-10 block px-5 py-3 rounded-xl bg-gray-900">
+                    <div className="relative z-10 flex items-center space-x-2">
+                      <span className="transition-all duration-500 group-hover:translate-x-1">
+                        {buttonText}
+                      </span>
+                      <svg
+                        className="w-6 h-6 transition-transform duration-500 group-hover:translate-x-1"
+                        data-slot="icon"
+                        aria-hidden="true"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clipRule="evenodd"
+                          d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                          fillRule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                  </span>
                 </button>
               </div>
             </form>

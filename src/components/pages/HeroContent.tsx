@@ -182,8 +182,8 @@ const HeroContent = () => {
         className="hidden md:block md:mb-10"
       >
         <Image
-          src="/mainIconsdark.svg"
-          alt="work icons"
+          src="/freepik.png" 
+          alt="Hero Image"
           height={650}
           width={650}
           className="w-full h-auto lg:w-[50rem] hover:scale-105 transition duration-300 ease-in-out"

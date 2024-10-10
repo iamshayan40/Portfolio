@@ -20,6 +20,7 @@ import LoadingBar from "react-top-loading-bar";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { XIcon } from "@heroicons/react/outline"; // Import the close icon
+import "remixicon/fonts/remixicon.css";
 
 const exploreVariants = {
   hidden: { y: -50, opacity: 0 },
@@ -101,7 +102,9 @@ const Navbar = () => {
 
       {/* Mobile Navbar Menu */}
       <div className="lg:hidden flex items-center">
-        <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}> {/* Bind isMenuOpen to control sheet visibility */}
+        <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+          {" "}
+          {/* Bind isMenuOpen to control sheet visibility */}
           <SheetTrigger asChild>
             <motion.div
               initial={{ x: 50, opacity: 0 }} // Animate in from the right
@@ -110,7 +113,7 @@ const Navbar = () => {
               className="flex items-center"
             >
               <button>
-                <MenuIcon className="h-8 w-7 text-white transition-transform duration-300 hover:scale-110 mr-3" />
+                <i className="ri-menu-3-fill text-2xl text-white transition-transform duration-300 mr-3"></i>
               </button>
             </motion.div>
           </SheetTrigger>

@@ -70,7 +70,7 @@ const AboutSection = () => {
           <Image
             src="/code.svg"
             alt="Description of SVG"
-            className="h-72 w-72 md:h-96 md:w-96 object-contain"
+            className="h-72 w-72 md:h-96 md:w-96 object-contain transition-all duration-300 hover:scale-105"
             width={200}
             height={200}
           />

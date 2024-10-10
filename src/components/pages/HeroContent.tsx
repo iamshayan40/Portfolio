@@ -179,7 +179,7 @@ const HeroContent = () => {
       {/* Image Section */}
       <motion.div
         variants={slideInFromRight(0.5)}
-        className="hidden md:block md:mb-10"
+        className="md:mb-10 md:-mt-4 mt-4"
       >
         <Image
           src="/freepik.png" 

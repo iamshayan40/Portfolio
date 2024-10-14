@@ -4,7 +4,7 @@ import React from "react";
 
 const Slider = () => {
   return (
-    <div className="relative overflow-hidden bg-transparent border-t border-b border-zinc-800 py-4 -mt-48 md:-mt-8 lg:mb-20">
+    <div className="relative overflow-hidden bg-transparent border-t border-b border-zinc-800 py-4 mb-28">
       <div className="whitespace-nowrap flex animate-scroll text-sm font-monty font-light text-gray-100 uppercase">
         {/* Original Content */}
         <span className="mx-6">Innovative Solutions</span>
@@ -30,7 +30,7 @@ const Slider = () => {
             transform: translateX(0);
           }
           0% {
-            transform: translateX(-50%); /* Adjust to -50% to make full line visible */
+            transform: translateX(-50%); 
           }
         }
         .animate-scroll {

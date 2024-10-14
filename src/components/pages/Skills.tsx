@@ -57,7 +57,6 @@ export default function Skills() {
       icon: <SiBootstrap className="text-purple-500 text-5xl" />,
       title: "Bootstrap",
     },
-    // Adding more duplicates to make a total of 40
   ];
 
   // Duplicate skills array to reach 40 boxes
@@ -72,70 +71,148 @@ export default function Skills() {
   ];
 
   return (
-    <div id="skills" className="h-screen flex items-center justify-center bg-transparent  md:-mt-14 -mt-48">
-      {/* Main Container with Padding and Overflow Hidden */}
-      <div className="relative w-11/12 md:w-3/4 lg:h-3/4 p-2 md:p-2  border border-zinc-900 hover:border-zinc-800 backdrop-blur-lg bg-transparent rounded-3xl transition duration-300 ease-in-out hover:shadow-lg overflow-hidden">
-        {/* Heading */}
-        <h1 className="md:p-7 md:pb-8 pb-2 mt-6 md:mt-4 text-5xl md:text-7xl text-white font-lexend font-extralight text-center">
+    <div className="">
+    <h1 className="md:p-7 md:pb-8 pb-8 mt-6 md:mt-4 text-5xl md:text-7xl text-white font-lexend font-extralight text-center">
           My{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-blue-500">
             TechStack
           </span>
         </h1>
-        {/* Description */}
-        <p className="hidden md:block px-6 pb-12 text-white text-2xl font-lexend font-light text-center opacity-80">
+        <p className="px-6 pb-32 text-white text-2xl font-lexend font-light text-center opacity-80">
           My techstack features essential tools for building efficient and
           user-friendly applications.
         </p>
-
-      {/* Container for sliding boxes */}
-<div className="flex overflow-hidden w-full mt-24">
-  {/* Add whitespace-nowrap here */}
-  <div className="flex animate-slide-left gap-6 whitespace-nowrap">
-    {/* Inner Boxes with Animation */}
-    {extendedSkills.map((skill, index) => (
-      <div
-        key={index}
-        className={`relative w-48 h-24 border border-zinc-800 hover:border-zinc-700 backdrop-blur-lg bg-transparent rounded-3xl transition ease-in-out opacity-80 hover:opacity-100 flex items-center justify-center z-10`}
-      >
-        <div className="flex flex-col items-center space-y-2">
-          {/* Centered content */}
-          {skill.icon}
-          <span className="text-white text-lg font-lexend font-extralight">
-            {skill.title}
-          </span>
-        </div>
-      </div>
-    ))}
-  </div>
+          <div className="flex flex-wrap justify-center gap-4">
+          <div className="wrapper">
+  {extendedSkills.slice(0, 8).map((skill, index) => (
+    <div className={`itemLeft item${index + 1}`} key={index}>
+      {skill.icon}
+      <p className="text-white text-sm font-extralight font-poppins mt-12">
+        {skill.title}
+      </p>
+    </div>
+  ))}
+</div>
+<div className="wrapper wrapperRight"> {/* Added wrapperRight class */}
+  {extendedSkills.slice(0, 8).map((skill, index) => (
+    <div className={`itemRight item${index + 1}`} key={index}>
+      {skill.icon}
+      <p className="text-white text-sm font-extralight font-poppins mt-12">
+        {skill.title}
+      </p>
+    </div>
+  ))}
 </div>
 
-        {/* Gap between inner boxes */}
-        <div className="flex overflow-hidden w-full md:mt-6 mt-4 mb-4">
-          {" "}
-          {/* Added margin-top for spacing */}
-          <div className="flex animate-slide-right gap-6">
-            {" "}
-            {/* Changed to animate-slide-right */}
-            {/* Inner Boxes with Animation */}
-            {extendedSkills.map((skill, index) => (
-              <div
-                key={index}
-                className={`relative w-48 h-24 border border-zinc-800 hover:border-zinc-700 backdrop-blur-lg bg-transparent rounded-3xl transition duration-300 ease-in-out opacity-80 hover:opacity-100 flex items-center justify-center z-10`} // Added z-index here
-              >
-                <div className="flex flex-col items-center space-y-2">
-                  {" "}
-                  {/* Centered content */}
-                  {skill.icon}
-                  <span className="text-white text-lg font-lexend font-extralight">
-                    {skill.title}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+<style jsx>{`
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  .wrapper {
+    margin-top: -2.1rem;
+    width: 90%;
+    max-width: 1536px;
+    margin-inline: auto;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0)
+    );
+  }
+
+  .wrapperRight { /* New class for the second wrapper */
+    margin-bottom: 2.5vw; /* Added bottom margin */
+  }
+
+    
+            @keyframes scrollLeft {
+              to {
+                left: -200px;
+              }
+            }
+    
+            @keyframes scrollRight {
+              to {
+                right: -200px;
+              }
+            }
+    
+            .itemLeft,
+            .itemRight {
+              width: 200px;
+              height: 110px; /* Height increased */
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              background: rgba(0, 0, 0, 0.9); /* Darker background */
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              border-radius: 25px;
+              backdrop-filter: blur(40px); /* Increased blur */
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+              position: absolute;
+              animation-timing-function: linear;
+              animation-duration: 30s;
+              animation-iteration-count: infinite;
+              opacity: 0.7;
+              transition: opacity 0.3s ease;
+              z-index: 1;
+            }
+            .itemLeft:hover,
+            .itemRight:hover {
+              opacity: 1; /* Apply hover effect here */
+            }
+    
+            .itemLeft {
+              left: max(calc(200px * 8), 100%);
+              animation-name: scrollLeft;
+            }
+    
+            .itemRight {
+              right: max(calc(200px * 8), calc(100% + 200px));
+              animation-name: scrollRight;
+            }
+    
+            .item1 {
+              animation-delay: calc(30s / 8 * (8 - 1) * -1);
+            }
+    
+            .item2 {
+              animation-delay: calc(30s / 8 * (8 - 2) * -1);
+            }
+    
+            .item3 {
+              animation-delay: calc(30s / 8 * (8 - 3) * -1);
+            }
+    
+            .item4 {
+              animation-delay: calc(30s / 8 * (8 - 4) * -1);
+            }
+    
+            .item5 {
+              animation-delay: calc(30s / 8 * (8 - 5) * -1);
+            }
+    
+            .item6 {
+              animation-delay: calc(30s / 8 * (8 - 6) * -1);
+            }
+    
+            .item7 {
+              animation-delay: calc(30s / 8 * (8 - 7) * -1);
+            }
+    
+            .item8 {
+              animation-delay: calc(30s / 8 * (8 - 8) * -1);
+            }
+          `}</style>
         </div>
-      </div>
-    </div>
+        </div>
   );
 }

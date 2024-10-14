@@ -37,7 +37,7 @@ function AboutSection() {
         }
         .animate-scroll {
           animation: scroll 8s linear infinite;
-          white-space: nowrap; /* Ensure words stay in one line */
+          white-space: nowrap; 
         }
       `}</style>
     </div>

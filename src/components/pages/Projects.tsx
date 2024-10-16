@@ -24,7 +24,7 @@ function Skills() {
         "https://images.pexels.com/photos/18977351/pexels-photo-18977351/free-photo-of-close-up-of-the-steering-wheel-and-the-dashboard-in-a-tesla-model-s.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       width: 400,  // Specify the width
       height: 300, // Specify the height
-      link: "https://github.com/yourusername/tesla-clone",
+      link: "https://github.com/iamshayan40/Tesla-Clone",
     },
     {
       title: "Next.js Blog",
@@ -48,7 +48,7 @@ function Skills() {
         "https://images.pexels.com/photos/965345/pexels-photo-965345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       width: 400,  // Specify the width
       height: 300, // Specify the height
-      link: "https://github.com/iamshayan40",
+      link: "https://github.com/iamshayan40/TypeScript-Projects",
     },
     {
       title: "Next.js FullStack App",

@@ -24,7 +24,7 @@ function Skills() {
         "https://images.pexels.com/photos/18977351/pexels-photo-18977351/free-photo-of-close-up-of-the-steering-wheel-and-the-dashboard-in-a-tesla-model-s.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       width: 400,  // Specify the width
       height: 300, // Specify the height
-      link: "https://github.com/yourusername/tesla-clone",
+      link: "https://github.com/iamshayan40/Tesla-Clone",
     },
     {
       title: "Next.js Blog",
@@ -48,7 +48,7 @@ function Skills() {
         "https://images.pexels.com/photos/965345/pexels-photo-965345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       width: 400,  // Specify the width
       height: 300, // Specify the height
-      link: "https://github.com/iamshayan40",
+      link: "https://github.com/iamshayan40/TypeScript-Projects",
     },
     {
       title: "Next.js FullStack App",
@@ -145,6 +145,12 @@ function Skills() {
               <p className="text-[0.75em]">{card.description}</p>
             </div>
             <button className="mt-auto h-fit w-fit px-[1em] py-[0.30em] border-[1px] rounded-full flex justify-center items-center space-x-2 overflow-hidden group hover:translate-y-[0.125em] duration-200 backdrop-blur-[12px]">
+            <a
+                href={card.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2"
+              >
               <p>Full Code</p>
               <svg
                 className="w-6 h-6 group-hover:translate-x-[10%] duration-300"
@@ -160,6 +166,7 @@ function Skills() {
                   strokeLinejoin="round"
                 ></path>
               </svg>
+              </a>
             </button>
           </motion.div>
         ))}

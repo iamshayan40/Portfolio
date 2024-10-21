@@ -71,7 +71,7 @@ export default function Skills() {
   ];
 
   return (
-    <div className="pb-12 md:pb-0">
+    <div id="skills" className="pb-12 md:pb-0">
     <h1 className="md:p-7 md:pb-8 pb-8 md:mt-4 text-5xl md:text-7xl text-white font-lexend font-extralight text-center">
           My{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-600">

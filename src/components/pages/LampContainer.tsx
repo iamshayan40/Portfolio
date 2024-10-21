@@ -13,7 +13,7 @@ export const LampContainer = ({
   return (
     <div
       className={cn(
-        "relative flex flex-col items-center justify-center overflow-hidden w-full rounded-md z-0 h-80 md:-mt-36 -mt-20",
+        "relative flex flex-col items-center justify-center overflow-hidden w-full rounded-md z-0 h-80 md:-mt-28 -mt-32",
         className
       )}
     >
@@ -81,7 +81,7 @@ export const LampContainer = ({
       <div className="relative z-50 flex flex-col items-center px-5">
         <h1 className="-mt-40 md:-mt-36 mb-12 text-4xl sm:text-5xl font-extralight font-lexend text-white text-center">
           Projects I Created With My
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-800">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-600">
             {" "}
             TechStack
           </span>

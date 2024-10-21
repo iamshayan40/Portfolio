@@ -4,7 +4,7 @@ import React from 'react'
 function AboutSection() {
 
   return (
-    <div className="relative overflow-hidden bg-transparent py-4 border-t border-b border-zinc-800 mt-16">
+    <div className="relative overflow-hidden bg-transparent py-4 border-t border-b border-zinc-800">
       {/* Animated Scrolling Content */}
       <div className="whitespace-nowrap flex animate-scroll text-sm font-monty font-light text-gray-100 uppercase">
         {/* Original Content */}

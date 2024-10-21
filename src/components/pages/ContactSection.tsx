@@ -46,18 +46,18 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="relative mt-20 md:mt-8">
+    <section id="contact" className="relative md:-mt-16">
       <div className="mt-16 md:mt-12">
         <Slider />
       </div>
 
-      <div className="container mx-auto flex flex-col md:flex-row md:items-start justify-between py-14">
+      <div className="container mx-auto flex flex-col md:flex-row md:items-start justify-between py-14 -mt-10 md:mt-8">
         {/* Left Section */}
         <div className="md:w-1/2 grid grid-cols-1 items-start p-6 font-lexend">
           <div>
             <h1 className="text-gray-100 text-4xl sm:text-5xl font-poppins font-bold">
               Let's{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-600">
                 Connect!
               </span>
             </h1>

@@ -8,7 +8,7 @@ import Image from "next/image";
 const HeroContent = () => {
   const handleCVDownload = () => {
     const link = document.createElement("a");
-    link.href = "/public/Muhammad Shayan.pdf";
+    link.href = "/Muhammad Shayan.pdf";
     link.setAttribute("download", "Muhammad_Shayan_CV.pdf");
     document.body.appendChild(link);
     link.click();
@@ -28,13 +28,13 @@ const HeroContent = () => {
         >
           <div>
             Hi, I'm
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500">
               {" "}
               Shayan
               <br />
             </span>
             <span className="lg:text-5xl mb-2 text-4xl xl:text-6xl">A</span>
-            <span className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 lg:text-[3.2vw]">
+            <span className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-600 lg:text-[3.2vw]">
               {" "}
               <Typewriter
                 words={[
@@ -186,7 +186,7 @@ const HeroContent = () => {
           alt="Hero Image"
           height={650}
           width={650}
-          className="w-full h-auto lg:w-[50rem] hover:scale-105 transition duration-300 ease-in-out"
+          className="w-[22rem] h-auto lg:w-[50rem] hover:scale-105 transition duration-300 ease-in-out"
         />
       </motion.div>
     </motion.div>

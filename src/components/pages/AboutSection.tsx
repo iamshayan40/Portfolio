@@ -6,17 +6,17 @@ import Image from "next/image";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="relative mt-20 md:mt-12">
+    <section id="about" className="relative md:mt-4">
       <div className="mt-16 md:mt-12">
         <Slider />
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between md:px-20 p-4">
+      <div className="flex flex-col md:flex-row justify-between md:px-20 p-4 -mt-6 md:mt-10">
         {/* Text Section */}
         <div className="flex flex-col pt-12 px-2 justify-center md:max-w-[50%]">
-          <h1 className="font-poppins font-bold text-4xl md:text-6xl text-zinc-300 transition-transform duration-300 transform text-center md:text-left">
+          <h1 className="font-poppins font-bold text-5xl md:text-6xl text-zinc-300 transition-transform duration-300 transform text-center md:text-left">
             About{" "}
-            <span className="ml-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">
+            <span className="ml-2 bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-purple-600">
               Me
             </span>
           </h1>

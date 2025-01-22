@@ -8,7 +8,7 @@ import Image from "next/image";
 const HeroContent = () => {
   const handleCVDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Muhammad Shayan.pdf";
+    link.href = "/Muhammad Shayan_Resume.pdf.pdf";
     link.setAttribute("download", "Muhammad_Shayan_CV.pdf");
     document.body.appendChild(link);
     link.click();

@@ -38,12 +38,14 @@ const HeroContent = () => {
               {" "}
               <Typewriter
                 words={[
-                  "Frontend Engineer.",
+                  "Frontend Developer.",
                   "Next.js Developer.",
                   "React.js Developer.",
                   "Node.js Developer.",
+                  "Python Developer.",
                   "TypeScript Developer.",
                   "AI Enthusiast.",
+                  "Agentic AI Engineer.",
                 ]}
                 loop={false}
                 cursor

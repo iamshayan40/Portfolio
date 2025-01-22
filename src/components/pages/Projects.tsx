@@ -72,7 +72,7 @@ function Skills() {
             animate={{ x: 0, opacity: 1 }} // Animate to original position
             exit={{ x: index < 2 ? -100 : 100, opacity: 0 }} // Exit animation
             transition={{ duration: 0.3 }} // Transition duration changed to 0.3s for faster speed
-            whileHover={{ scale: 1.05 }} // Scale up on hover
+            whileHover={{ scale: 1.05, transition: { duration: 0.1 } }} // Added transition duration of 0.3 seconds
             className="h-[26em] w-[24em] border-2 border-zinc-800 rounded-[1.5em] bg-transparent text-white font-nunito p-[1em] flex justify-center items-left flex-col gap-[0.75em]"
           >
             <img
@@ -123,12 +123,12 @@ function Skills() {
       <div className="flex justify-center gap-20 flex-wrap">
         {lowerCards.map((card, index) => (
           <motion.div
-            key={index}
-            initial={{ x: index < 2 ? -100 : 100, opacity: 0 }} // Same logic for lower cards
-            animate={{ x: 0, opacity: 1 }} // Animate to original position
-            exit={{ x: index < 2 ? -100 : 100, opacity: 0 }} // Exit animation
-            transition={{ duration: 0.5 }} // Transition duration
-            whileHover={{ scale: 1.05 }} // Scale up on hover
+          key={index}
+          initial={{ x: index < 2 ? -100 : 100, opacity: 0 }} // Initial position
+          animate={{ x: 0, opacity: 1 }} // Animate to original position
+          exit={{ x: index < 2 ? -100 : 100, opacity: 0 }} // Exit animation
+          transition={{ duration: 0.3 }} // Transition duration changed to 0.3s for faster speed
+          whileHover={{ scale: 1.05, transition: { duration: 0.1 } }} // Added transition duration of 0.3 seconds
             className="h-[26em] w-[24em] border-2 border-zinc-800 rounded-[1.5em] bg-transparent text-white font-nunito p-[1em] flex justify-center items-left flex-col gap-[0.75em]"
           >
             <img

@@ -11,6 +11,8 @@ import AboutSection from "@/components/pages/AboutSection";
 import ContactSection from "@/components/pages/ContactSection";
 import Footer from "@/components/pages/FooterSection";
 import PreLoader from "@/components/main/Preloader";
+import ExperienceSection from "@/components/pages/ExperienceSection";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,7 +30,7 @@ function Home() {
   }, []);
 
   return (
-    <main className="h-full w-full overflow-x-hidden">
+    <main className="w-full">
       {isLoading ? (
         <div
           className={`transition-opacity duration-1000 ${
@@ -40,17 +42,38 @@ function Home() {
       ) : (
         <div className="flex flex-col gap-20">
           <Navbar />
-          <HeroContent />
-          <SkillsSection />
-          <Skills />
-          <Slider />
-          <LampContainer>
-            <div></div>
-          </LampContainer>
-          <Projects />
-          <AboutSection />
-          <ContactSection />
-          <Footer />
+          <AnimatedSection>
+            <HeroContent />
+          </AnimatedSection>
+          <AnimatedSection delay={0.2}>
+            <SkillsSection />
+          </AnimatedSection>
+          <AnimatedSection delay={0.3}>
+            <Skills />
+          </AnimatedSection>
+          <AnimatedSection delay={0.4}>
+            <Slider />
+          </AnimatedSection>
+          <AnimatedSection delay={0.5}>
+            <LampContainer>
+              <div></div>
+            </LampContainer>
+          </AnimatedSection>
+          <AnimatedSection delay={0.6}>
+            <Projects />
+          </AnimatedSection>
+          <AnimatedSection delay={0.7}>
+            <ExperienceSection />
+          </AnimatedSection>
+          <AnimatedSection delay={0.8}>
+            <AboutSection />
+          </AnimatedSection>
+          <AnimatedSection delay={0.9}>
+            <ContactSection />
+          </AnimatedSection>
+          <AnimatedSection delay={1}>
+            <Footer />
+          </AnimatedSection>
         </div>
       )}
     </main>

@@ -25,7 +25,7 @@ const FooterSection = () => {
         <hr className="my-6 border-gray-700 sm:mx-auto lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-400 sm:text-center -mt-1 flex justify-center">
-            © 2024 All Rights Reserved.
+            © 2024-25 All Rights Reserved.
           </span>
           <div className="flex mt-4 justify-center space-x-5 sm:mt-0">
             <a

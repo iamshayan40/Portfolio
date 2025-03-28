@@ -23,7 +23,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body>
+      <body className="overflow-x-hidden">
         {/* Background Star Canvas */}
         <StarsCanvas />
 

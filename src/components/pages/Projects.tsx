@@ -51,13 +51,14 @@ function Skills() {
       link: "https://github.com/iamshayan40/TypeScript-Projects",
     },
     {
-      title: "Next.js FullStack App",
-      description: "Coming Soon...",
+      title: "Web Based Discussion Forum",
+      description: "The Web-Based Discussion Forum Platform is a simple, text-based platform that allows users to sign up, create forums, and engage in discussions. It includes authentication, forum management, real-time messaging, and moderation tools. Users can explore and filter forums by category or joined discussions for a more interactive experience. This project was developed as part of my internship, where I contributed and gained hands-on experience, enhancing both technical and collaborative skills.",
       image:
-        "https://miro.medium.com/v2/resize:fit:1400/0*UWpKjbcky5kZCgMh.png",
+        "https://saaslandingpage.com/wp-content/uploads/2023/08/Cover-community-forum-examples@2x-680x382.png",
       width: 400,  // Specify the width
       height: 300, // Specify the height
-      link: "#",
+      link: "https://github.com/Sanaullah-Turab/Web-Based-Discussion-Forum",
+      hot: true,
     },
   ];
 
@@ -68,12 +69,12 @@ function Skills() {
         {upperCards.map((card, index) => (
           <motion.div
             key={index}
-            initial={{ x: index < 2 ? -100 : 100, opacity: 0 }} // Initial position
-            animate={{ x: 0, opacity: 1 }} // Animate to original position
-            exit={{ x: index < 2 ? -100 : 100, opacity: 0 }} // Exit animation
-            transition={{ duration: 0.3 }} // Transition duration changed to 0.3s for faster speed
-            whileHover={{ scale: 1.05, transition: { duration: 0.1 } }} // Added transition duration of 0.3 seconds
-            className="h-[26em] w-[24em] border-2 border-zinc-800 rounded-[1.5em] bg-transparent text-white font-nunito p-[1em] flex justify-center items-left flex-col gap-[0.75em]"
+            initial={{ x: index < 2 ? -100 : 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: index < 2 ? -100 : 100, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            whileHover={{ scale: 1.05, transition: { duration: 0.1 } }}
+            className="relative h-[26em] w-[24em] border-2 border-zinc-800 rounded-[1.5em] bg-transparent text-white font-nunito p-[1em] flex flex-col gap-[0.75em]"
           >
             <img
               src={card.image}
@@ -91,6 +92,50 @@ function Skills() {
               </p>
             </div>
             <button className="mt-auto h-fit w-fit px-[1em] py-[0.30em] border-[1px] rounded-full flex justify-center items-center overflow-hidden group hover:translate-y-[0.125em] duration-200 backdrop-blur-[12px]">
+              <a href={card.link} target="_blank" rel="noopener noreferrer">
+                <p>Full Code</p>
+              </a>
+            </button>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Space Between Upper and Lower Cards */}
+      <div className="lg:my-16 my-10" />
+
+      {/* Lower Cards Row */}
+      <div className="flex justify-center gap-20 flex-wrap">
+        {lowerCards.map((card, index) => (
+          <motion.div
+            key={index}
+            initial={{ x: index < 2 ? -100 : 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: index < 2 ? -100 : 100, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            whileHover={{ scale: 1.05, transition: { duration: 0.1 } }}
+            className="relative h-[26em] w-[24em] border-2 border-zinc-800 rounded-[1.5em] bg-transparent text-white font-nunito p-[1em] flex flex-col gap-[0.75em]"
+          >
+            {/* HOT TAG */}
+            {card.hot && (
+              <span className="absolute -top-8 right-8 bg-red-600 text-white text-xs font-extralight font-lexend px-3 py-1 rounded-full">
+                HOT
+              </span>
+            )}
+
+            <img
+              src={card.image}
+              alt={card.title}
+              width={card.width}
+              height={card.height}
+              className="h-48 w-full rounded-[1.5em] -mt-16 object-cover"
+            />
+            <div>
+              <h1 className="text-2xl font-medium font-lexend mb-4">
+                {card.title}
+              </h1>
+              <p className="text-[0.75em]">{card.description}</p>
+            </div>
+            <button className="mt-auto h-fit w-fit px-[1em] py-[0.30em] border-[1px] rounded-full flex justify-center items-center space-x-2 overflow-hidden group hover:translate-y-[0.125em] duration-200 backdrop-blur-[12px]">
               <a
                 href={card.link}
                 target="_blank"
@@ -112,60 +157,6 @@ function Skills() {
                     strokeLinejoin="round"
                   ></path>
                 </svg>
-              </a>
-            </button>
-          </motion.div>
-        ))}
-      </div>
-      {/* Space Between Upper and Lower Cards */}
-      <div className="lg:my-16 my-10" />
-      {/* Lower Cards Row */}
-      <div className="flex justify-center gap-20 flex-wrap">
-        {lowerCards.map((card, index) => (
-          <motion.div
-          key={index}
-          initial={{ x: index < 2 ? -100 : 100, opacity: 0 }} // Initial position
-          animate={{ x: 0, opacity: 1 }} // Animate to original position
-          exit={{ x: index < 2 ? -100 : 100, opacity: 0 }} // Exit animation
-          transition={{ duration: 0.3 }} // Transition duration changed to 0.3s for faster speed
-          whileHover={{ scale: 1.05, transition: { duration: 0.1 } }} // Added transition duration of 0.3 seconds
-            className="h-[26em] w-[24em] border-2 border-zinc-800 rounded-[1.5em] bg-transparent text-white font-nunito p-[1em] flex justify-center items-left flex-col gap-[0.75em]"
-          >
-            <img
-              src={card.image}
-              alt={card.title}
-              width={card.width}
-              height={card.height}
-              className="h-48 w-full rounded-[1.5em] -mt-16 object-cover"
-            />
-            <div>
-              <h1 className="text-2xl font-medium font-lexend mb-4">
-                {card.title}
-              </h1>
-              <p className="text-[0.75em]">{card.description}</p>
-            </div>
-            <button className="mt-auto h-fit w-fit px-[1em] py-[0.30em] border-[1px] rounded-full flex justify-center items-center space-x-2 overflow-hidden group hover:translate-y-[0.125em] duration-200 backdrop-blur-[12px]">
-            <a
-                href={card.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2"
-              >
-              <p>Full Code</p>
-              <svg
-                className="w-6 h-6 group-hover:translate-x-[10%] duration-300"
-                stroke="currentColor"
-                strokeWidth="1"
-                viewBox="0 0 24 24"
-                fill="white"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></path>
-              </svg>
               </a>
             </button>
           </motion.div>

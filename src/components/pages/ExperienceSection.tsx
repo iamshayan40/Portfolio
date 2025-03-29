@@ -26,7 +26,7 @@ const ExperienceSection = () => {
       
       {/* Removed Floating Elements */}
       
-      <div className="max-w-7xl mx-auto relative pt-16">
+      <div className="max-w-7xl mx-auto relative pt-8 md:pt-14 px-4">
         {/* Section Title with Advanced Animation */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,7 +51,7 @@ const ExperienceSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-gray-400 font-light font-lexend text-lg md:text-2xl"
+            className="text-gray-400 font-light font-lexend text-lg md:text-xl"
           >
             Professional journey and achievements
           </motion.p>
@@ -78,7 +78,7 @@ const ExperienceSection = () => {
                   whileHover={{ scale: 1.1 }}
                   className="relative"
                 >
-                    <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 backdrop-blur-sm border border-zinc-800/50 flex items-center justify-center">
+                    <div className="w-12 h-12 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 backdrop-blur-sm border border-zinc-800/50 flex items-center justify-center">
                       <Image
                         src="/logo1.webp"
                         alt="Securely Innovations Logo"
@@ -90,10 +90,10 @@ const ExperienceSection = () => {
                   <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
                 <div>
-                    <h3 className="text-2xl md:text-4xl font-bold font-poppins text-gray-100 mb-4">
+                    <h3 className="text-base md:text-4xl font-bold font-poppins text-gray-100 mb-4">
                     Web Developer Intern
                   </h3>
-                    <div className="flex items-center gap-3 text-gray-400 font-light font-lexend text-base md:text-xl">
+                    <div className="flex items-center gap-3 text-gray-400 font-light font-lexend text-sm md:text-lg">
                     <Building2 className="w-6 h-6" />
                     <span>Securely Innovations (Pvt.) ltd.</span>
                     </div>
@@ -101,7 +101,7 @@ const ExperienceSection = () => {
                 </div>
                 <motion.div
                   whileHover={{ scale: 1.1 }}
-                  className="w-16 h-16 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 backdrop-blur-sm border border-zinc-800/50 flex items-center justify-center"
+                  className="w-12 h-12 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 backdrop-blur-sm border border-zinc-800/50 flex items-center justify-center hidden md:flex"
                 >
                   <Code2 className="w-8 h-8 md:w-12 md:h-12 text-purple-500" />
                 </motion.div>
@@ -118,14 +118,14 @@ const ExperienceSection = () => {
             >
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center gap-3 bg-zinc-900/30 px-6 py-3 rounded-xl border border-zinc-800/50"
+                className="flex items-center gap-3 bg-zinc-900/30 px-4 py-2 rounded-xl border border-zinc-800/50"
               >
                 <Calendar className="w-5 h-5" />
                 <span>3 Months</span>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center gap-3 bg-zinc-900/30 px-6 py-3 rounded-xl border border-zinc-800/50"
+                className="flex items-center gap-3 bg-zinc-900/30 px-4 py-2 rounded-xl border border-zinc-800/50"
               >
                 <Code2 className="w-5 h-5" />
                 <span>2024-25</span>
@@ -140,10 +140,10 @@ const ExperienceSection = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="space-y-5"
             >
-              <p className="text-gray-300 font-light font-lexend text-base md:text-xl">
+              <p className="text-gray-300 font-light font-lexend text-sm md:text-base">
                 During my internship at Securely Innovations, I gained valuable experience in:
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {[
                   "Full-stack web development",
                   "React Native mobile app development",
@@ -160,7 +160,7 @@ const ExperienceSection = () => {
                     className="group/item relative"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-xl blur-xl opacity-0 group-hover/item:opacity-100 transition-opacity duration-500" />
-                    <div className="relative flex items-center gap-4 text-gray-300 font-light font-lexend text-base md:text-lg p-4 md:p-6 rounded-xl bg-zinc-900/30 border border-zinc-800/50">
+                    <div className="relative flex items-center gap-4 text-gray-300 font-light font-lexend text-sm md:text-base p-4 md:p-6 rounded-xl bg-zinc-900/30 border border-zinc-800/50">
                       <div className="relative">
                         <CheckCircle2 className="w-6 h-6 text-purple-500" />
                         <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-sm opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
@@ -213,16 +213,16 @@ const ExperienceSection = () => {
               <div className="flex items-center justify-between">
                 <motion.div
                   whileHover={{ scale: 1.1 }}
-                  className="w-16 h-16 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 backdrop-blur-sm border border-zinc-800/50 flex items-center justify-center"
+                  className="w-12 h-12 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 backdrop-blur-sm border border-zinc-800/50 flex items-center justify-center hidden md:flex"
                 >
                   <Users className="w-8 h-8 md:w-12 md:h-12 text-purple-500" />
                 </motion.div>
                 <div className="flex items-center gap-6">
                   <div>
-                    <h3 className="text-2xl md:text-4xl font-bold font-poppins text-gray-100 mb-4 text-right">
+                    <h3 className="text-xl md:text-4xl font-bold font-poppins text-gray-100 mb-4 text-right">
                       Certified Agentic and Robotic AI Engineering
                     </h3>
-                    <div className="flex items-center gap-3 text-gray-400 font-light font-lexend text-base md:text-xl justify-end">
+                    <div className="flex items-center gap-3 text-gray-400 font-light font-lexend text-sm md:text-lg justify-end">
                       <Building2 className="w-6 h-6" />
                       <span>PIAIC - Presidential Initiative for Artificial Intelligence and Computing</span>
                     </div>
@@ -231,7 +231,7 @@ const ExperienceSection = () => {
                     whileHover={{ scale: 1.1 }}
                     className="relative"
                   >
-                    <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 backdrop-blur-sm border border-zinc-800/50 flex items-center justify-center">
+                    <div className="w-12 h-12 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 backdrop-blur-sm border border-zinc-800/50 flex items-center justify-center md:flex">
                       <Image
                         src="https://www.piaic.org/static/media/Logo.fb7de414.svg"
                         alt="PIAIC Logo"
@@ -256,14 +256,14 @@ const ExperienceSection = () => {
             >
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center gap-3 bg-zinc-900/30 px-6 py-3 rounded-xl border border-zinc-800/50"
+                className="flex items-center gap-3 bg-zinc-900/30 px-4 py-2 rounded-xl border border-zinc-800/50"
               >
                 <Calendar className="w-5 h-5" />
                 <span>1.5 Years</span>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center gap-3 bg-zinc-900/30 px-6 py-3 rounded-xl border border-zinc-800/50"
+                className="flex items-center gap-3 bg-zinc-900/30 px-4 py-2 rounded-xl border border-zinc-800/50"
               >
                 <Code2 className="w-5 h-5" />
                 <span>2024-Present</span>
@@ -278,10 +278,10 @@ const ExperienceSection = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="space-y-5"
             >
-              <p className="text-gray-300 font-light font-lexend text-base md:text-xl">
+              <p className="text-gray-300 font-light font-lexend text-sm md:text-base">
                 During my course at PIAIC, I have learned and worked with:
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {[
                   "Modern Python Programming",
                   "LangChain & LangGraph Development",
@@ -299,7 +299,7 @@ const ExperienceSection = () => {
                     className={`group/item relative ${index === 4 ? 'md:col-span-2' : ''}`}
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-xl blur-xl opacity-0 group-hover/item:opacity-100 transition-opacity duration-500" />
-                    <div className="relative flex items-center gap-4 text-gray-300 font-light font-lexend text-base md:text-lg p-4 md:p-6 rounded-xl bg-zinc-900/30 border border-zinc-800/50">
+                    <div className="relative flex items-center gap-4 text-gray-300 font-light font-lexend text-sm md:text-base p-4 md:p-6 rounded-xl bg-zinc-900/30 border border-zinc-800/50">
                       <div className="relative">
                         <CheckCircle2 className="w-6 h-6 text-purple-500" />
                         <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-sm opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />

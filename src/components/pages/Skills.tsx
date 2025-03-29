@@ -78,11 +78,11 @@ export default function Skills() {
             TechStack
           </span>
         </h1>
-        <p className="pb-32 text-white text-2xl font-lexend font-light text-center opacity-80">
+        <p className="pb-32 px-2 text-white text-2xl font-lexend font-light text-center opacity-80">
           My techstack features essential tools for building efficient and
           user-friendly applications.
         </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3">
           <div className="wrapper">
   {extendedSkills.slice(0, 8).map((skill, index) => (
     <div className={`itemLeft item${index + 1}`} key={index}>

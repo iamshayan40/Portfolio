@@ -117,8 +117,8 @@ function Skills() {
           >
             {/* HOT TAG */}
             {card.hot && (
-              <span className="absolute -top-8 right-8 bg-red-600 text-white text-xs font-extralight font-lexend px-3 py-1 rounded-full">
-                HOT
+              <span className="absolute -top-8 right-8 bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-semibold font-lexend px-4 py-1 rounded-full shadow-lg animate-pulse">
+                HOT 🔥
               </span>
             )}
 

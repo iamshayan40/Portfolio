@@ -1,11 +1,25 @@
 "use client";
-import React from "react";
+import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { slideInFromLeft, slideInFromRight } from "../../../utils/motion";
 import Image from "next/image";
 
 const HeroContent = () => {
+  const typewriterWords = useMemo(
+    () => [
+      "Frontend Developer.",
+      "Next.js Developer.",
+      "React.js Developer.",
+      "Node.js Developer.",
+      "Python Developer.",
+      "TypeScript Developer.",
+      "AI Enthusiast.",
+      "Agentic AI Engineer.",
+    ],
+    []
+  );
+
   const handleCVDownload = () => {
     const link = document.createElement("a");
     link.href = "/Muhammad Shayan_Resume.pdf.pdf";
@@ -20,6 +34,7 @@ const HeroContent = () => {
       initial="hidden"
       animate="visible"
       className="flex flex-col md:flex-row items-center justify-center w-full z-[20] px-5 md:px-20"
+      style={{ willChange: "transform, opacity" }}
     >
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-center mt-6 xl:text-start xl:gap-6 xl:mt-20">
         <motion.div
@@ -37,16 +52,7 @@ const HeroContent = () => {
             <span className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-600 lg:text-[3.2vw]">
               {" "}
               <Typewriter
-                words={[
-                  "Frontend Developer.",
-                  "Next.js Developer.",
-                  "React.js Developer.",
-                  "Node.js Developer.",
-                  "Python Developer.",
-                  "TypeScript Developer.",
-                  "AI Enthusiast.",
-                  "Agentic AI Engineer.",
-                ]}
+                words={typewriterWords}
                 loop={false}
                 cursor
                 cursorStyle="|"
@@ -182,9 +188,10 @@ const HeroContent = () => {
       <motion.div
         variants={slideInFromRight(0.5)}
         className="md:mb-10 md:-mt-4 mt-4"
+        style={{ willChange: "transform, opacity" }}
       >
         <Image
-          src="/freepik.png" 
+          src="/freepik.png"
           alt="Hero Image"
           height={650}
           width={650}

@@ -48,6 +48,15 @@
 }
 }
 
+/* Add this rule to handle scrollbar visibility during preloader */
+body.preloader-active {
+  overflow: hidden;
+}
+
+/* Ensure normal overflow when preloader is inactive */
+body {
+  overflow: auto;
+}
 
 /* styles.css or your component's CSS file */
 /* Left  */

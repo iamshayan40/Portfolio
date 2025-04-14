@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { ReactNode } from "react";
 import { motion } from "framer-motion";
 
 interface AnimatedSectionProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   delay?: number;
 }
@@ -13,9 +13,9 @@ const AnimatedSection = ({ children, className = "", delay = 0 }: AnimatedSectio
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, delay }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut", delay }}
+      style={{ willChange: "transform, opacity" }}
       className={className}
     >
       {children}
@@ -23,4 +23,4 @@ const AnimatedSection = ({ children, className = "", delay = 0 }: AnimatedSectio
   );
 };
 
-export default AnimatedSection; 
+export default AnimatedSection;

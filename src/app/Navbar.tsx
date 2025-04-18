@@ -79,9 +79,9 @@ const Navbar = () => {
 
       {/* Desktop Navbar Links */}
       <div className="hidden lg:flex gap-12 pr-6 text-xl font-lexend font-extralight text-white">
-        {["/", "#skills", "#project", "#about", "#contact"].map(
+        {["/", "#skills", "#project", "experience", "#about", "#contact"].map(
           (path, index) => {
-            const labels = ["Home", "Skills", "Projects", "About", "Contact"];
+            const labels = ["Home", "Skills", "Projects","Experience", "About", "Contact"];
             return (
               <motion.div
                 key={path}
@@ -145,12 +145,13 @@ const Navbar = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4 }}
             >
-              {["/", "#skills", "#project", "#about", "#contact"].map(
+              {["/", "#skills", "#project", "#experience", "#about", "#contact"].map(
                 (path, index) => {
                   const labels = [
                     "Home",
                     "Skills",
                     "Projects",
+                    "Experience",
                     "About",
                     "Contact",
                   ];

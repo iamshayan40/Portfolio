@@ -13,6 +13,7 @@ import Footer from "@/components/pages/FooterSection";
 import PreLoader from "@/components/main/Preloader";
 import ExperienceSection from "@/components/pages/ExperienceSection";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import Testimonals from "@/components/pages/Testimonals";
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -51,7 +52,7 @@ function Home() {
           <AnimatedSection delay={0.3}>
             <Skills />
           </AnimatedSection>
-          <AnimatedSection delay={0.4}>
+          <AnimatedSection delay={0.4} className="w-screen m-0 p-0">
             <Slider />
           </AnimatedSection>
           <AnimatedSection delay={0.5}>
@@ -62,6 +63,7 @@ function Home() {
           <AnimatedSection delay={0.6}>
             <Projects />
           </AnimatedSection>
+          <Testimonals/>
           <AnimatedSection delay={0.7}>
             <ExperienceSection />
           </AnimatedSection>

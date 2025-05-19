@@ -29,7 +29,7 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="relative flex flex-col justify-end min-h-screen w-full text-white">
-      <div className="mt-16 md:mt-12">
+      <div className="w-screen m-0 p-0">
         <Slider />
       </div>
 

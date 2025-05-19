@@ -12,8 +12,10 @@ const ExperienceSection = () => {
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
 
   return (
-    <section id="experience" className="relative py-16 md:py-4 px-4 md:px-8">
+    <section id="experience" className="relative py-16 md:py-4 px-0 md:px-0">
+    <div className="w-full max-w-none">
       <Slider />
+    </div>
       {/* Animated Background Elements */}
       <motion.div
         style={{ opacity }}

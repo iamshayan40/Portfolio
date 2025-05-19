@@ -47,7 +47,7 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="relative md:-mt-16">
-      <div className="mt-16 md:mt-12">
+      <div className="w-screen m-0 p-0">
         <Slider />
       </div>
 

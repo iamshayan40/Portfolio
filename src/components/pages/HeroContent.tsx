@@ -22,7 +22,7 @@ const HeroContent = () => {
 
   const handleCVDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Muhammad Shayan_Resume.pdf.pdf";
+    link.href = "/Muhammad Shayan Resume.pdf";
     link.setAttribute("download", "Muhammad_Shayan_CV.pdf");
     document.body.appendChild(link);
     link.click();

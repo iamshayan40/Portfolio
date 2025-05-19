@@ -41,24 +41,23 @@ function Skills() {
   // Lower row card details
   const lowerCards = [
     {
-      title: "TypeScript & NodeJS CLI",
+      title: "E-commerce Agency Website",
       description:
-        "This project features several CLI tools created using TypeScript and Node.js, including a quiz game, adventure game, age counter, and student management system. Each tool showcases the versatility of TypeScript and Node.js for building interactive command-line applications. The projects are published on npm, allowing easy access for users. These tools offer engaging experiences while demonstrating effective coding practices and user-friendly interfaces.",
+        "This website was developed for a client who is an eCommerce digital marketer. Built using Next.js, Tailwind CSS, and Three.js, it features a fully responsive design, smooth background animations, a custom navigation bar, and dedicated sections for showcasing the client’s work and reviews. It reflects my skills in modern frontend development, responsive UI design, and animation integration.",
       image:
-        "https://images.pexels.com/photos/965345/pexels-photo-965345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "/UBA.png",
       width: 400,  // Specify the width
       height: 300, // Specify the height
-      link: "https://github.com/iamshayan40/TypeScript-Projects",
+      link: "https://uba-portfolio.vercel.app/",
     },
     {
       title: "Web Based Discussion Forum",
-      description: "The Web-Based Discussion Forum Platform is a simple, text-based platform that allows users to sign up, create forums, and engage in discussions. It includes authentication, forum management, real-time messaging, and moderation tools. Users can explore and filter forums by category or joined discussions for a more interactive experience. This project was developed as part of my internship, where I contributed and gained hands-on experience, enhancing both technical and collaborative skills.",
+      description: "The Web-Based Discussion Forum Platform is a simple text-based app where users can sign up, create forums, and join discussions. It features authentication, forum management, real-time messaging, and moderation. Users can explore or filter forums by category or participation. This project was developed during my internship, helping me gain hands-on experience and improve both technical and collaborative skills.",
       image:
         "https://saaslandingpage.com/wp-content/uploads/2023/08/Cover-community-forum-examples@2x-680x382.png",
       width: 400,  // Specify the width
       height: 300, // Specify the height
       link: "https://github.com/Sanaullah-Turab/Web-Based-Discussion-Forum",
-      hot: true,
     },
   ];
 
@@ -74,7 +73,7 @@ function Skills() {
             exit={{ x: index < 2 ? -100 : 100, opacity: 0 }}
             transition={{ duration: 0.3 }}
             whileHover={{ scale: 1.05, transition: { duration: 0.1 } }}
-            className="relative h-[26em] w-[24em] border-2 border-zinc-800 rounded-[1.5em] bg-transparent text-white font-nunito p-[1em] flex flex-col gap-[0.75em]"
+            className="relative h-[26em] w-[24em] border-2 border-zinc-800 rounded-[1.5em] font-extralight font-lexend bg-transparent text-white font-nunito p-[1em] flex flex-col gap-[0.75em]"
           >
             <img
               src={card.image}
@@ -91,9 +90,28 @@ function Skills() {
                 {card.description}
               </p>
             </div>
-            <button className="mt-auto h-fit w-fit px-[1em] py-[0.30em] border-[1px] rounded-full flex justify-center items-center overflow-hidden group hover:translate-y-[0.125em] duration-200 backdrop-blur-[12px]">
-              <a href={card.link} target="_blank" rel="noopener noreferrer">
+            <button className="mt-auto h-fit w-fit px-[1em] py-[0.30em] border border-white/20 rounded-full flex justify-center items-center overflow-hidden group hover:translate-y-[0.125em] duration-200 backdrop-blur-[12px] hover:bg-gradient-to-r hover:from-gray-600 hover:via-gray-700 hover:to-gray-600 text-white">
+            <a
+                href={card.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2"
+              >
                 <p>Full Code</p>
+                <svg
+                  className="w-6 h-6 group-hover:translate-x-[10%] duration-300"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></path>
+                </svg>
               </a>
             </button>
           </motion.div>
@@ -113,15 +131,9 @@ function Skills() {
             exit={{ x: index < 2 ? -100 : 100, opacity: 0 }}
             transition={{ duration: 0.3 }}
             whileHover={{ scale: 1.05, transition: { duration: 0.1 } }}
-            className="relative h-[26em] w-[24em] border-2 border-zinc-800 rounded-[1.5em] bg-transparent text-white font-nunito p-[1em] flex flex-col gap-[0.75em]"
+            className="relative h-[26em] w-[24em] border-2 border-zinc-800 rounded-[1.5em] font-lexend font-extralight bg-transparent text-white font-nunito p-[1em] flex flex-col gap-[0.75em]"
           >
-            {/* HOT TAG */}
-            {card.hot && (
-              <span className="absolute -top-8 right-8 bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-semibold font-lexend px-4 py-1 rounded-full shadow-lg animate-pulse">
-                HOT 🔥
-              </span>
-            )}
-
+            
             <img
               src={card.image}
               alt={card.title}
@@ -135,7 +147,7 @@ function Skills() {
               </h1>
               <p className="text-[0.75em]">{card.description}</p>
             </div>
-            <button className="mt-auto h-fit w-fit px-[1em] py-[0.30em] border-[1px] rounded-full flex justify-center items-center space-x-2 overflow-hidden group hover:translate-y-[0.125em] duration-200 backdrop-blur-[12px]">
+            <button className="mt-auto h-fit w-fit px-[1em] py-[0.30em] border border-white/20 rounded-full flex justify-center items-center overflow-hidden group hover:translate-y-[0.125em] duration-200 backdrop-blur-[12px] hover:bg-gradient-to-r hover:from-gray-600 hover:via-gray-700 hover:to-gray-600 text-white">
               <a
                 href={card.link}
                 target="_blank"

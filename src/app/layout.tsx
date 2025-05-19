@@ -4,6 +4,8 @@ import React from "react";
 import { metadata } from "./metadata"; // Import metadata
 import "./globals.css"; // Global styles
 import StarsCanvas from "@/components/main/StarBackground"; // Background animation
+import CustomCursor from "@/components/main/CustomCursor"; // Custom cursor
+import GoToTop from "@/components/main/GoToTop"; // Go to top button
 
 export default function RootLayout({
   children,
@@ -26,6 +28,12 @@ export default function RootLayout({
       <body className="overflow-x-hidden">
         {/* Background Star Canvas */}
         <StarsCanvas />
+
+        {/* Custom Cursor */}
+        <CustomCursor />
+
+        {/* Go to Top Button */}
+        <GoToTop />
 
         {/* Main content container */}
         <div id="main" className="relative z-10">

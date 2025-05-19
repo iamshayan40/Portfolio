@@ -91,30 +91,9 @@ html {
   scroll-behavior: smooth;
 }
 
-.scroll-container {
-  overflow: hidden; /* Prevent default scrolling */
-  height: 100vh; /* Ensure full viewport height */
-}
 
 /* Scrollbar styles */
 ::-webkit-scrollbar {
-  width: 12px; /* Scrollbar ki width */
+  display: none; 
 }
 
-/* Scrollbar track */
-::-webkit-scrollbar-track {
-  background: #5c5c5c; /* Track ka background color */
-  border-radius: 10px; /* Track ke corners ko rounded banane ke liye */
-}
-
-/* Scrollbar thumb */
-::-webkit-scrollbar-thumb {
-  background: #888; /* Thumb ka color */
-  border-radius: 5px; /* Thumb ke corners ko rounded banane ke liye */
-}
-
-/* Scrollbar thumb hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #dadada; /* Thumb hover hone par color */
-  transition: background 0.3s ease; /* Animation for hover */
-}

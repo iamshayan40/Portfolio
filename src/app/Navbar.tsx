@@ -79,7 +79,7 @@ const Navbar = () => {
 
       {/* Desktop Navbar Links */}
       <div className="hidden lg:flex gap-12 pr-6 text-xl font-lexend font-extralight text-white">
-        {["/", "#skills", "#project", "experience", "#about", "#contact"].map(
+        {["/", "#skills", "#project", "#experience", "#about", "#contact"].map(
           (path, index) => {
             const labels = ["Home", "Skills", "Projects","Experience", "About", "Contact"];
             return (

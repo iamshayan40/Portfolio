@@ -3,20 +3,32 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+
 const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [isNearFooter, setIsNearFooter] = useState(false);
+  const [preloaderActive, setPreloaderActive] = useState(true);
+
+  // Listen to preloaderActive changes in localStorage
+  useEffect(() => {
+    const checkPreloader = () => {
+      setPreloaderActive(!!window.localStorage.getItem('preloaderActive'));
+    };
+    checkPreloader();
+    window.addEventListener('storage', checkPreloader);
+    // Also check on focus (for SPA navigation)
+    window.addEventListener('focus', checkPreloader);
+    return () => {
+      window.removeEventListener('storage', checkPreloader);
+      window.removeEventListener('focus', checkPreloader);
+    };
+  }, []);
+
+
 
   useEffect(() => {
-    // Initial check for preloader
-    const isPreloaderActive = window.localStorage.getItem('preloaderActive');
-    if (isPreloaderActive || document.readyState !== 'complete') {
-      setIsVisible(false);
-      document.body.style.cursor = 'auto';
-      return;
-    }
 
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -90,6 +102,9 @@ const CustomCursor = () => {
     document.addEventListener('mouseover', handleMouseOver);
     return () => document.removeEventListener('mouseover', handleMouseOver);
   }, []);
+
+
+  if (preloaderActive) return null;
 
   return (
     <div className="hidden md:block">

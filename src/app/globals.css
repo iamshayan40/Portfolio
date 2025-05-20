@@ -106,8 +106,18 @@ body {
   animation: slide-right 400s linear infinite; /* Increased duration for slower speed */
 }
 
+
 html {
   scroll-behavior: smooth;
+}
+
+/* Custom cursor globally */
+body {
+  cursor: none;
+}
+
+footer, .mobile-menu {
+  cursor: auto !important;
 }
 
 

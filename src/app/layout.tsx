@@ -17,6 +17,8 @@ export default function RootLayout({
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
+        {/* Favicon link for all browsers */}
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         {/* Font Awesome CSS */}
         <link
           rel="stylesheet"

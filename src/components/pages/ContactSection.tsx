@@ -53,7 +53,7 @@ const ContactSection = () => {
 
       <div className="container mx-auto flex flex-col md:flex-row md:items-start justify-between py-14 -mt-10 md:mt-8">
         {/* Left Section */}
-        <div className="md:w-1/2 grid grid-cols-1 items-start p-6 font-lexend">
+        <div className="md:w-1/2 grid grid-cols-1 items-start p-6 ml-0 md:ml-12 font-lexend">
           <div>
             <h1 className="text-gray-100 text-4xl sm:text-5xl font-poppins font-bold">
               Let's{" "}
@@ -71,7 +71,7 @@ const ContactSection = () => {
 
             <div className="mt-6 flex flex-col sm:flex-row justify-between">
               {/* Email Section */}
-              <div className="mr-12 mb-6 sm:mb-0">
+              <div className="mb-6 sm:mb-0">
                 <h2 className="text-gray-100 text-base font-lexend font-extralight">
                   Email
                 </h2>
@@ -106,7 +106,7 @@ const ContactSection = () => {
 
             <div className="mt-6 flex flex-col sm:flex-row justify-between">
               {/* Contact Section */}
-              <div className="mr-12 mb-6 sm:mb-0">
+              <div className="mb-6 sm:mb-0">
                 <h2 className="text-gray-100 text-base font-lexend font-extralight">
                   Contact
                 </h2>
@@ -131,7 +131,7 @@ const ContactSection = () => {
                         Contact No.
                       </label>
                       <strong className="font-lexend font-light">
-                        92 310 2017585
+                        +92 310 2017585
                       </strong>
                     </a>
                   </li>
@@ -142,7 +142,7 @@ const ContactSection = () => {
         </div>
 
         
-        <div className="w-full flex justify-center md:justify-end md:hidden mt-2">
+        <div className="w-full flex justify-center md:justify-end md:hidden -mt-6">
           <div className="w-full max-w-md max-h-fit">
             <h2 className="flex justify-center text-gray-300 text-[2.5rem] sm:text-3xl font-bold font-poppins pt-10">
               Get in{" "}
@@ -151,13 +151,13 @@ const ContactSection = () => {
               </span>
             </h2>
 
-            <form onSubmit={onSubmit} className="mt-2 px-4">
+            <form onSubmit={onSubmit} className="mt-2 px-6">
               <div className="mb-4">
                 <label
                   className="block text-gray-100 text-sm font-light font-lexend mb-2"
                   htmlFor="name"
                 >
-                  Name
+                  Name:
                 </label>
                 <input
                   className="shadow appearance-none border-2 border-zinc-800 rounded-xl w-full py-4 px-3 bg-transparent text-gray-100 font-light font-lexend leading-tight focus:outline-none focus:shadow-outline"
@@ -173,7 +173,7 @@ const ContactSection = () => {
                   className="block text-gray-100 text-sm font-light font-lexend mb-2"
                   htmlFor="email"
                 >
-                  Email
+                  Email:
                 </label>
                 <input
                   className="shadow appearance-none border-2 border-zinc-800 rounded-xl w-full py-4 px-3 bg-transparent text-gray-100 font-light font-lexend leading-tight focus:outline-none focus:shadow-outline"
@@ -189,15 +189,16 @@ const ContactSection = () => {
                   className="block text-gray-100 text-sm font-light font-lexend mb-2"
                   htmlFor="message"
                 >
-                  Message
+                  Message:
                 </label>
                 <textarea
-                  className="shadow appearance-none border-2 border-zinc-800 rounded-xl w-full py-8 px-3 bg-transparent text-gray-100 font-light font-lexend leading-tight focus:outline-none focus:shadow-outline"
-                  id="message"
-                  name="message" // Added name attribute
-                  placeholder="Your Message"
-                  required
-                ></textarea>
+  className="shadow appearance-none border-2 border-zinc-800 rounded-xl w-full min-h-[150px] pt-4 pb-2 px-3 bg-transparent text-gray-100 font-light font-lexend leading-tight focus:outline-none focus:shadow-outline align-top"
+  id="message"
+  name="message"
+  placeholder="Your Message"
+  required
+></textarea>
+
               </div>
               <div className="relative group justify-center md:justify-start flex">
                 <button className="relative inline-block p-px -space-y-3 mt-3 font-semibold font-lexend leading-6 text-white bg-gray-900 cursor-pointer rounded-xl transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">

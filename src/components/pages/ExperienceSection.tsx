@@ -21,10 +21,6 @@ const ExperienceSection = () => {
         style={{ opacity }}
         className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/5 to-transparent"
       />
-      <motion.div
-        style={{ opacity }}
-        className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0)_0%,rgba(0,0,0,0.1)_100%)]"
-      />
       
       {/* Removed Floating Elements */}
       
@@ -80,7 +76,7 @@ const ExperienceSection = () => {
                   whileHover={{ scale: 1.1 }}
                   className="relative"
                 >
-                    <div className="w-12 h-12 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 backdrop-blur-sm border border-zinc-800/50 flex items-center justify-center">
+                    <div className="w-12 h-12 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 border border-zinc-800/50 flex items-center justify-center">
                       <Image
                         src="/logo1.webp"
                         alt="Securely Innovations Logo"
@@ -103,7 +99,7 @@ const ExperienceSection = () => {
                 </div>
                 <motion.div
                   whileHover={{ scale: 1.1 }}
-                  className="w-12 h-12 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 backdrop-blur-sm border border-zinc-800/50 flex items-center justify-center hidden md:flex"
+                  className="w-12 h-12 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 border border-zinc-800/50 flex items-center justify-center md:flex"
                 >
                   <Code2 className="w-8 h-8 md:w-12 md:h-12 text-purple-500" />
                 </motion.div>
@@ -215,7 +211,7 @@ const ExperienceSection = () => {
               <div className="flex items-center justify-between">
                 <motion.div
                   whileHover={{ scale: 1.1 }}
-                  className="w-12 h-12 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 backdrop-blur-sm border border-zinc-800/50 flex items-center justify-center hidden md:flex"
+                  className="w-12 h-12 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 border border-zinc-800/50 flex items-center justify-center md:flex"
                 >
                   <Users className="w-8 h-8 md:w-12 md:h-12 text-purple-500" />
                 </motion.div>
@@ -233,7 +229,7 @@ const ExperienceSection = () => {
                     whileHover={{ scale: 1.1 }}
                     className="relative"
                   >
-                    <div className="w-12 h-12 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 backdrop-blur-sm border border-zinc-800/50 flex items-center justify-center md:flex">
+                    <div className="w-12 h-12 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 border border-zinc-800/50 flex items-center justify-center md:flex">
                       <Image
                         src="https://www.piaic.org/static/media/Logo.fb7de414.svg"
                         alt="PIAIC Logo"

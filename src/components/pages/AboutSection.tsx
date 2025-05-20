@@ -34,7 +34,7 @@ const AboutSection = () => {
       </div>
 
       <motion.div
-        className="container mx-auto px-5 sm:px-2 py-2 sm:py-36"
+        className="container mx-auto px-5 sm:px-2 py-2 pb-16 sm:py-36"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

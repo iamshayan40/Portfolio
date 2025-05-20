@@ -1,24 +1,58 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const [isNearFooter, setIsNearFooter] = useState(false);
 
   useEffect(() => {
+    // Initial check for preloader
+    const isPreloaderActive = window.localStorage.getItem('preloaderActive');
+    if (isPreloaderActive || document.readyState !== 'complete') {
+      setIsVisible(false);
+      document.body.style.cursor = 'auto';
+      return;
+    }
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
+      
+      // Only show cursor if preloader is not active
+      if (!window.localStorage.getItem('preloaderActive')) {
+        setIsVisible(true);
+        checkFooterDistance(e);
+      }
+    };
+
+    const checkFooterDistance = (e: MouseEvent) => {
+      const footer = document.querySelector('footer');
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+        const distanceToFooter = footerRect.top - e.clientY;
+        if (distanceToFooter < 50) {
+          setIsNearFooter(true);
+          document.body.style.cursor = 'auto';
+        } else {
+          setIsNearFooter(false);
+          document.body.style.cursor = 'none';
+        }
+      }
     };
 
     const handleMouseLeave = () => {
       setIsVisible(false);
+      document.body.style.cursor = 'auto';
     };
 
     const handleMouseEnter = () => {
-      setIsVisible(true);
+      if (!window.localStorage.getItem('preloaderActive')) {
+        setIsVisible(true);
+        document.body.style.cursor = 'none';
+      }
     };
 
     // Add event listeners
@@ -26,9 +60,7 @@ const CustomCursor = () => {
     document.addEventListener('mouseleave', handleMouseLeave);
     document.addEventListener('mouseenter', handleMouseEnter);
 
-    // Hide default cursor
-    document.body.style.cursor = 'none';
-
+    // Cleanup
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseleave', handleMouseLeave);
@@ -41,9 +73,9 @@ const CustomCursor = () => {
   useEffect(() => {
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.closest('footer') || target.closest('.mobile-menu')) {
+      if (target.closest('.mobile-menu')) {
         setIsVisible(false);
-      } else {
+      } else if (!target.closest('footer')) {
         setIsVisible(true);
       }
 
@@ -60,78 +92,100 @@ const CustomCursor = () => {
   }, []);
 
   return (
-    <>
-      {isVisible && (
-        <>
-          {/* Main cursor dot */}
-          <motion.div
-            className="fixed pointer-events-none z-50"
-            animate={{
-              x: mousePosition.x - 4,
-              y: mousePosition.y - 4,
-              scale: isHovering ? 1.5 : 1,
-            }}
-            transition={{
-              type: "spring",
-              damping: 50,
-              stiffness: 1000,
-              mass: 0.1
-            }}
-          >
-            <div className="w-2 h-2 bg-white rounded-full" />
-          </motion.div>
+    <div className="hidden md:block">
+      <AnimatePresence>
+        {isVisible && !isNearFooter && (
+          <>
+            {/* Main cursor dot */}
+            <motion.div
+              className="fixed pointer-events-none z-50"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{
+                opacity: 1,
+                x: mousePosition.x - 4,
+                y: mousePosition.y - 4,
+                scale: isHovering ? 1.5 : 1,
+              }}
+              exit={{ 
+                opacity: 0,
+                scale: 0,
+                transition: { duration: 0.3 }
+              }}
+              transition={{
+                type: "spring",
+                damping: 50,
+                stiffness: 1000,
+                mass: 0.1
+              }}
+            >
+              <div className="w-2 h-2 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full" />
+            </motion.div>
 
-          {/* Outer ring */}
-          <motion.div
-            className="fixed pointer-events-none z-50"
-            animate={{
-              x: mousePosition.x - 16,
-              y: mousePosition.y - 16,
-              scale: isHovering ? 1.5 : 1,
-            }}
-            transition={{
-              type: "spring",
-              damping: 30,
-              stiffness: 200,
-              mass: 0.5
-            }}
-          >
-            <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center">
-              <motion.div
-                className="w-4 h-4 rounded-full border border-white/20"
-                animate={{
-                  scale: isHovering ? 0.8 : 1,
-                }}
-                transition={{
-                  type: "spring",
-                  damping: 30,
-                  stiffness: 200,
-                  mass: 0.5
-                }}
-              />
-            </div>
-          </motion.div>
+            {/* Outer ring */}
+            <motion.div
+              className="fixed pointer-events-none z-50"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{
+                opacity: 1,
+                x: mousePosition.x - 16,
+                y: mousePosition.y - 16,
+                scale: isHovering ? 1.5 : 1,
+              }}
+              exit={{ 
+                opacity: 0,
+                scale: 0,
+                transition: { duration: 0.3 }
+              }}
+              transition={{
+                type: "spring",
+                damping: 30,
+                stiffness: 200,
+                mass: 0.5
+              }}
+            >
+              <div className="w-8 h-8 rounded-full border border-violet-500/30 flex items-center justify-center">
+                <motion.div
+                  className="w-4 h-4 rounded-full border border-indigo-400/20"
+                  animate={{
+                    scale: isHovering ? 0.8 : 1,
+                  }}
+                  transition={{
+                    type: "spring",
+                    damping: 30,
+                    stiffness: 200,
+                    mass: 0.5
+                  }}
+                />
+              </div>
+            </motion.div>
 
-          {/* Trailing effect */}
-          <motion.div
-            className="fixed pointer-events-none z-50"
-            animate={{
-              x: mousePosition.x - 8,
-              y: mousePosition.y - 8,
-            }}
-            transition={{
-              type: "spring",
-              damping: 20,
-              stiffness: 100,
-              mass: 0.8
-            }}
-          >
-            <div className="w-4 h-4 rounded-full bg-white/10" />
-          </motion.div>
-        </>
-      )}
-    </>
+            {/* Trailing effect */}
+            <motion.div
+              className="fixed pointer-events-none z-50"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                x: mousePosition.x - 8,
+                y: mousePosition.y - 8,
+              }}
+              exit={{ 
+                opacity: 0,
+                transition: { duration: 0.2 }
+              }}
+              transition={{
+                type: "spring",
+                damping: 20,
+                stiffness: 100,
+                mass: 0.8
+              }}
+            >
+              <div className="w-4 h-4 rounded-full bg-gradient-to-r from-violet-600/10 to-indigo-600/10" />
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 
-export default CustomCursor; 
+export default CustomCursor;

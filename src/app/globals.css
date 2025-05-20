@@ -6,6 +6,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Logo Fonts */
+@font-face {
+  font-family: 'Blauer-Nue-Light';
+  src: url('/Logo font/Blauer-Nue-Light-iF6626350c6db36.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Blauer-Nue-Regular';
+  src: url('/Logo font/Blauer-Nue-Regular-iF6626350c83fdf.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Blauer-Nue-Medium';
+  src: url('/Logo font/Blauer-Nue-Medium-iF6626350c78103.otf') format('opentype');
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 0 0% 3.9%; /* Default light theme color, agar hai toh */

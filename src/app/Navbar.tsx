@@ -67,21 +67,63 @@ const Navbar = () => {
         onLoaderFinished={() => setProgress(0)}
       />
 
-      {/* Animate "Shayan." from the left on large screens */}
-      <motion.h1
-        className="text-[35px] font-extralight font-lexend pl-3 md:pl-6 text-white"
+      {/* Animate DevShayan> logo from the left on large screens */}
+      <motion.div
+        className="text-[30px] md:text-[35px] pl-3 md:pl-6 flex items-center logo-text"
         initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        Shayan.
-      </motion.h1>
+        <span
+          style={{
+            fontFamily: 'Blauer-Nue-Light',
+            background: 'linear-gradient(180deg, #bcbcbc 60%, #6e6e6e 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            textShadow: '0 1px 2px rgba(188,188,188,0.35)', // subtle glow
+            marginRight: 2,
+            fontWeight: 600,
+            letterSpacing: '0.5px',
+          }}
+        >
+          Dev
+        </span>
+       <span
+  style={{
+    fontFamily: 'Blauer-Nue-Light',
+    color: '#fff',
+    textShadow: `
+      0 0 1.5px rgba(255, 255, 255, 0.6),
+      0 0 3px rgba(255, 255, 255, 0.4),
+      0 0 6px rgba(255, 255, 255, 0.25)
+    `,
+    marginLeft: -2,
+    fontWeight: 500,
+    letterSpacing: '0.7px',
+  }}
+>
+  Shayan
+</span>
+
+        <span
+          style={{
+            fontFamily: 'Blauer-Nue-Light',
+            color: '#39FF14',
+            textShadow: '0 1px 2px rgba(57,255,20,0.25)', // subtle glow
+            marginLeft: 2,
+            fontWeight: 600,
+            letterSpacing: '0.5px',
+          }}
+        >
+          &gt;
+        </span>
+      </motion.div>
 
       {/* Desktop Navbar Links */}
       <div className="hidden lg:flex gap-12 pr-6 text-xl font-lexend font-extralight text-white">
-        {["/", "#skills", "#project", "#experience", "#about", "#contact"].map(
+        {["#skills", "#project", "#experience", "#about", "#contact"].map(
           (path, index) => {
-            const labels = ["Home", "Skills", "Projects","Experience", "About", "Contact"];
+            const labels = ["My Stack", "Projects","Experience", "About", "Contact"];
             return (
               <motion.div
                 key={path}
@@ -139,17 +181,17 @@ const Navbar = () => {
             </button>
 
             {/* Mobile Menu Links */}
-            <motion.ul
-              className="flex flex-col items-center gap-8 text-2xl font-extralight uppercase text-center text-white"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4 }}
-            >
-              {["/", "#skills", "#project", "#experience", "#about", "#contact"].map(
+           <motion.ul
+  className="flex flex-col items-center gap-8 text-2xl font-extralight text-center text-white mt-12"
+  initial={{ opacity: 0, scale: 0.95 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.4 }}
+>
+
+              {["#skills", "#project", "#experience", "#about", "#contact"].map(
                 (path, index) => {
                   const labels = [
-                    "Home",
-                    "Skills",
+                    "My Stack",
                     "Projects",
                     "Experience",
                     "About",
@@ -185,7 +227,7 @@ const Navbar = () => {
                   { href: "https://github.com/iamshayan40", icon: faGithub },
                   { href: "https://www.facebook.com/", icon: faFacebookF },
                   {
-                    href: "https://pk.linkedin.com/in/iamshayan40",
+                    href: "https://pk.linkedin.com/in/shayan40",
                     icon: faLinkedin,
                   },
                   {

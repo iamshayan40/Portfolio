@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from 'react';
 
 export const PreLoader = () => {
@@ -5,26 +6,30 @@ export const PreLoader = () => {
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    // Add 'preloader-active' class to body when PreLoader is active
     document.body.classList.add('preloader-active');
+    // Set global flag for cursor visibility
+    window.localStorage.setItem('preloaderActive', 'true');
 
     const fadeInTimeout = setTimeout(() => {
       setVisible(true);
     }, 500);
 
     const fadeOutTimeout = setTimeout(() => {
-      setVisible(false); // Start fade-out
+      setVisible(false);
       const hideTimeout = setTimeout(() => {
-        setHidden(true); // Finally hide the loader after fade-out
-        document.body.classList.remove('preloader-active'); // Remove class when PreLoader is hidden
-      }, 1000); // Match with the CSS transition duration
+        setHidden(true);
+        document.body.classList.remove('preloader-active');
+        // Remove flag when preloader is done
+        window.localStorage.removeItem('preloaderActive');
+      }, 1000);
       return () => clearTimeout(hideTimeout);
-    }, 3000); // Show loader for 2.5 seconds before fade-out starts
+    }, 3000);
 
     return () => {
       clearTimeout(fadeInTimeout);
       clearTimeout(fadeOutTimeout);
-      document.body.classList.remove('preloader-active'); // Cleanup on unmount
+      document.body.classList.remove('preloader-active');
+      window.localStorage.removeItem('preloaderActive');
     };
   }, []);
 

@@ -33,10 +33,10 @@ This project utilizes several important technologies:
 
 ## Dependencies
 
-To run this project, you need to install some dependencies. These should be installed using `pnpm`:
+To run this project, you need to install some dependencies. These should be installed using `npm`:
 
 ```bash
-pnpm install
+npm install
 ```
 
 This command will install the dependencies listed in your project's `package.json` file.

@@ -50,7 +50,7 @@ const AboutSection = () => {
               variants={itemVariants}
             >
               <span className="text-white">About </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2cff2e] via-[#16e87a] to-[#2cff3e]">
                 Me
               </span>
             </motion.h2>

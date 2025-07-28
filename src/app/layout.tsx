@@ -3,7 +3,7 @@
 import React from "react";
 import { metadata } from "./metadata"; // Import metadata
 import "./globals.css"; // Global styles
-// import StarsCanvas from "@/components/main/StarBackground"; // Background animation
+import StarsCanvas from "@/components/main/StarBackground"; // Background animation
 import CustomCursor from "@/components/main/CustomCursor"; // Custom cursor
 import GoToTop from "@/components/main/GoToTop"; // Go to top button
 
@@ -29,7 +29,7 @@ export default function RootLayout({
       </head>
       <body className="overflow-x-hidden">
         {/* Background Star Canvas */}
-        {/* <StarsCanvas /> */}
+        <StarsCanvas />
 
         {/* Custom Cursor */}
         <CustomCursor />

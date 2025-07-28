@@ -18,58 +18,14 @@ const FooterSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8">
           <div className="space-y-2 md:space-y-4">
             <div className="flex items-start md:items-center gap-3 md:gap-4">
-              {/* Animate DevShayan> logo from the left on large screens */}
-              <motion.div
-                className="-mt-2 text-[30px] md:text-[30px] flex items-center logo-text"
-                initial={{ x: -50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <span
-                  style={{
-                    fontFamily: "Blauer-Nue-Light",
-                    background:
-                      "linear-gradient(180deg, #9a9a9a 60%, #4a4a4a 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    textShadow: "0 1px 2px rgba(188,188,188,0.35)",
-                    marginRight: 2,
-                    fontWeight: 600,
-                    letterSpacing: "0.5px",
-                  }}
-                >
-                  Dev
-                </span>
-                <span
-                  style={{
-                    fontFamily: "Blauer-Nue-Light",
-                    color: "#fff",
-                    textShadow: `
-                    0 0 1.5px rgba(255, 255, 255, 0.6),
-                    0 0 3px rgba(255, 255, 255, 0.4),
-                    0 0 6px rgba(255, 255, 255, 0.25)
-                  `,
-                    marginLeft: -2,
-                    fontWeight: 500,
-                    letterSpacing: "0.7px",
-                  }}
-                >
-                  Shayan
-                </span>
-
-                <span
-                  style={{
-                    fontFamily: "Blauer-Nue-Light",
-                    color: "#39FF14",
-                    textShadow: "0 1px 2px rgba(57,255,20,0.25)",
-                    marginLeft: 2,
-                    fontWeight: 600,
-                    letterSpacing: "0.5px",
-                  }}
-                >
-                  &gt;
-                </span>
-              </motion.div>
+              <Image
+                src="/NavLogo-removebg-preview.png"
+                alt="DevShayan Logo"
+                width={120}
+                height={40}
+                className="object-contain h-[38px] md:h-[42px] w-auto"
+                priority
+              />
             </div>
             <p className="  text-xs md:text-sm font-lexend font-light max-w-[200px] leading-tight">
               I deliver excellent services with top-quality results to my
@@ -160,7 +116,7 @@ const FooterSection = () => {
             <div className="flex space-x-4">
               <a
                 href="https://github.com/iamshayan40"
-                className="text-gray-400 hover:text-green-400 transform hover:scale-110 transition-all duration-300"
+                className="text-gray-400 hover:text-gray-400 transform hover:scale-110 transition-all duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >

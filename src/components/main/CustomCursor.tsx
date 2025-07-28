@@ -133,7 +133,7 @@ const CustomCursor = () => {
                 mass: 0.1
               }}
             >
-              <div className="w-2 h-2 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full" />
+              <div className="w-2 h-2 bg-gradient-to-r from-[#379e38] via-[#038a44] to-[#007209] rounded-full" />
             </motion.div>
 
             {/* Outer ring */}
@@ -158,9 +158,9 @@ const CustomCursor = () => {
                 mass: 0.5
               }}
             >
-              <div className="w-8 h-8 rounded-full border border-violet-500/30 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full border border-[#2cff2e]/30 flex items-center justify-center">
                 <motion.div
-                  className="w-4 h-4 rounded-full border border-indigo-400/20"
+                  className="w-4 h-4 rounded-full border border-[#16e87a]/20"
                   animate={{
                     scale: isHovering ? 0.8 : 1,
                   }}
@@ -194,7 +194,7 @@ const CustomCursor = () => {
                 mass: 0.8
               }}
             >
-              <div className="w-4 h-4 rounded-full bg-gradient-to-r from-violet-600/10 to-indigo-600/10" />
+              <div className="w-4 h-4 rounded-full bg-gradient-to-r from-[#2cff2e]/10 via-[#16e87a]/10 to-[#2cff3e]/10" />
             </motion.div>
           </>
         )}

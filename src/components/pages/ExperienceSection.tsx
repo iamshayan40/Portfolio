@@ -41,7 +41,7 @@ const ExperienceSection = () => {
             className="inline-block"
           >
             <h2 className="text-4xl md:text-6xl font-extralight font-lexend text-gray-100 mb-4 relative">
-              My <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500">Experience</span>
+              My <span className="text-green-600">Experience</span>
             </h2>
           </motion.div>
           <motion.p
@@ -160,8 +160,8 @@ const ExperienceSection = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-xl blur-xl opacity-0 group-hover/item:opacity-100 transition-opacity duration-500" />
                     <div className="relative flex items-center gap-4 text-gray-300 font-light font-lexend text-sm md:text-base p-4 md:p-6 rounded-xl bg-zinc-900/30 border border-zinc-800/50">
                       <div className="relative">
-                        <CheckCircle2 className="w-6 h-6 text-purple-500" />
-                        <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-sm opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
+                      <CheckCircle2 className="w-6 h-6 text-green-600" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#2cff2e]/20 via-[#16e87a]/20 to-[#2cff3e]/20 rounded-full blur-sm opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
                       </div>
                       <span>{skill}</span>
                     </div>
@@ -186,7 +186,7 @@ const ExperienceSection = () => {
               {[...Array(5)].map((_, i) => (
                 <div
                   key={i}
-                  className="w-1 h-1 rounded-full bg-gradient-to-r from-purple-500/50 to-cyan-500/50"
+                  className="w-1 h-1 rounded-full bg-gradient-to-r from-[#257426] via-[#049c4e] to-[#004e07]"
                 />
               ))}
             </div>
@@ -299,8 +299,8 @@ const ExperienceSection = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-xl blur-xl opacity-0 group-hover/item:opacity-100 transition-opacity duration-500" />
                     <div className="relative flex items-center gap-4 text-gray-300 font-light font-lexend text-sm md:text-base p-4 md:p-6 rounded-xl bg-zinc-900/30 border border-zinc-800/50">
                       <div className="relative">
-                        <CheckCircle2 className="w-6 h-6 text-purple-500" />
-                        <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-sm opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
+                      <CheckCircle2 className="w-6 h-6 text-green-600" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#2cff2e]/20 via-[#16e87a]/20 to-[#2cff3e]/20 rounded-full blur-sm opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
                       </div>
                       <span>{skill}</span>
                     </div>

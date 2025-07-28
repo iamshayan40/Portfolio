@@ -74,9 +74,10 @@ export default function Skills() {
     <div id="skills" className="pb-12 md:pb-0">
     <h1 className="md:p-7 md:pb-8 pb-8 md:mt-4 text-5xl md:text-7xl text-white font-lexend font-extralight text-center">
           My{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-600">
-            TechStack
-          </span>
+          <span className="text-green-600 font-light tracking-tight">
+  TechStack
+</span>
+
         </h1>
         <p className="pb-32 px-2 text-white text-2xl font-lexend font-light text-center opacity-80">
           My techstack features essential tools for building efficient and

@@ -38,7 +38,7 @@ function Home() {
             fadeOut ? "opacity-0" : "opacity-100"
           }`}
         >
-          {/* <PreLoader /> */}
+          <PreLoader />
         </div>
       ) : (
         <div className="flex flex-col gap-20">

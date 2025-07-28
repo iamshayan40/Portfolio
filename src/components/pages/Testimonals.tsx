@@ -55,7 +55,7 @@ const TestimonialCarousel = () => {
         <div className="text-center mb-6 md:mb-8">
           <h2 className="text-2xl md:text-5xl pb-2 font-light font-lexend text-white mb-2 md:mb-4 tracking-tight">
             What My Client{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-600">
+            <span className="text-green-600">
               Says
             </span>
           </h2>
@@ -93,7 +93,7 @@ const TestimonialCarousel = () => {
                       <h3 className="text-xl font-bold text-white mb-1">
                         {testimonials[currentIndex].name}
                       </h3>
-                      <p className="text-purple-300 text-center text-sm">
+                      <p className="text-green-600 text-center text-sm">
                         {testimonials[currentIndex].role}
                       </p>
                     </div>
@@ -124,7 +124,7 @@ const TestimonialCarousel = () => {
                       <div className="flex items-center">
                         <div className="h-0.5 flex-grow bg-gradient-to-r from-transparent to-white/20 mr-2 md:mr-4"></div>
                         <svg
-                          className="w-6 h-6 md:w-8 md:h-8 text-purple-400 mx-1 md:mx-2"
+                          className="w-6 h-6 md:w-8 md:h-8 text-green-600 mx-1 md:mx-2"
                           fill="currentColor"
                           viewBox="0 0 24 24"
                         >
@@ -144,10 +144,10 @@ const TestimonialCarousel = () => {
                           className="relative w-32 h-32 rounded-full object-cover border-2 border-purple-500/50"
                         />
                       </div>
-                      <h3 className="text-2xl font-bold text-white mb-2">
+                      <h3 className="text-2xl font-bold text-zinc-300 mb-2">
                         {testimonials[currentIndex].name}
                       </h3>
-                      <p className="text-purple-300 text-center">
+                      <p className="text-gray-300 text-center">
                         {testimonials[currentIndex].role}
                       </p>
                     </div>
@@ -160,7 +160,7 @@ const TestimonialCarousel = () => {
           {/* Navigation buttons - Better positioning for mobile */}
           <button
             onClick={goToPrev}
-            className="absolute z-10 top-1/2 -translate-y-1/2 left-1 sm:left-2 md:-left-4 bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm rounded-full p-2 md:p-3 transition duration-300 shadow-lg"
+            className="absolute z-10 top-1/2 -translate-y-1/2 left-1 sm:left-2 md:-left-4 bg-white/10 hover:bg-white/20 text-green-600 backdrop-blur-sm rounded-full p-2 md:p-3 transition duration-300 shadow-lg"
             aria-label="Previous testimonial"
           >
             <svg
@@ -180,7 +180,7 @@ const TestimonialCarousel = () => {
 
           <button
             onClick={goToNext}
-            className="absolute z-10 top-1/2 -translate-y-1/2 right-1 sm:right-2 md:-right-4 bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm rounded-full p-2 md:p-3 transition duration-300 shadow-lg"
+            className="absolute z-10 top-1/2 -translate-y-1/2 right-1 sm:right-2 md:-right-4 bg-white/10 hover:bg-white/20 text-green-600 backdrop-blur-sm rounded-full p-2 md:p-3 transition duration-300 shadow-lg"
             aria-label="Next testimonial"
           >
             <svg
@@ -207,7 +207,7 @@ const TestimonialCarousel = () => {
               onClick={() => goToSlide(index)}
               className={`mx-1 transition-all duration-300 ${
                 index === currentIndex
-                  ? "w-8 h-1.5 md:w-10 md:h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"
+                  ? "w-8 h-1.5 md:w-10 md:h-2 bg-gradient-to-r from-[#226823] via-[#16e87a] to-[#006308] rounded-full"
                   : "w-1.5 h-1.5 md:w-2 md:h-2 bg-white/30 hover:bg-white/50 rounded-full"
               }`}
               aria-label={`Go to testimonial ${index + 1}`}

@@ -57,7 +57,7 @@ const ContactSection = () => {
           <div>
             <h1 className="text-gray-100 text-4xl sm:text-5xl font-poppins font-bold">
               Let's{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-600">
+              <span className="text-green-500">
                 Connect!
               </span>
             </h1>
@@ -146,7 +146,7 @@ const ContactSection = () => {
           <div className="w-full max-w-md max-h-fit">
             <h2 className="flex justify-center text-gray-300 text-[2.5rem] sm:text-3xl font-bold font-poppins pt-10">
               Get in{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 ml-2">
+              <span className="text-green-500 ml-2">
                 touch!
               </span>
             </h2>
@@ -236,7 +236,7 @@ const ContactSection = () => {
           <div className="w-full max-w-md max-h-fit space-y-6">
             <h2 className="flex justify-center md:justify-start text-gray-300 text-2xl sm:text-[2.5rem] font-bold font-poppins">
               Get in{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 ml-2">
+              <span className="text-green-500 ml-2">
                 touch!
               </span>
             </h2>
